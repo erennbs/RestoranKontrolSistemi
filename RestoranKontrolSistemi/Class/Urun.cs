@@ -4,14 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RestoranKontrolSistemi.Class
-{
-    internal class Urun
-    {
+namespace RestoranKontrolSistemi.Class {
+    public class Urun {
         string urunAdi;
         string urunAciklama;
         string urunKategori;
-        float  fiyat;
+        float fiyat;
+
+        public string UrunAdi {
+            get {return urunAdi;} }
+
+        public string UrunAciklama {
+            get { return urunAciklama;}
+        }
+
+        public float Fiyat {
+            get { return fiyat;}
+        }
+
 
         public Urun(string urunAdi, string urunAciklama, float fiyat) {
             this.urunAdi = urunAdi;

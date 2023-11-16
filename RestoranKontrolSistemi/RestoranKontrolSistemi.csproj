@@ -128,5 +128,8 @@
   <ItemGroup>
     <None Include="Images\book-svg.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\add-svg.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

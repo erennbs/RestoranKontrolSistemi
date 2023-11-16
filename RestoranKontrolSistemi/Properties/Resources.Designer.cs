@@ -63,6 +63,16 @@ namespace RestoranKontrolSistemi.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_svg {
+            get {
+                object obj = ResourceManager.GetObject("add-svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap book_svg {
             get {
                 object obj = ResourceManager.GetObject("book-svg", resourceCulture);

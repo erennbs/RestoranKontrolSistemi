@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestoranKontrolSistemi.Class;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,13 +13,15 @@ namespace RestoranKontrolSistemi.UserControls
 {
     public partial class MenuItemUC : UserControl
     {
-        public MenuItemUC(string yemekAdi, string aciklama, float fiyat)
+        public MenuItemUC()
         {
             InitializeComponent();
-            
-            this.Controls.Find("labelYemekAdi", false)[0].Text = yemekAdi;
-            this.Controls.Find("labelAciklama", false)[0].Text = aciklama;
-            this.Controls.Find("labelFiyat", false)[0].Text = fiyat.ToString() + " TL";
+        }
+
+        public void UrunuYaz(Urun urun) {
+            this.Controls.Find("labelYemekAdi", false)[0].Text = urun.UrunAdi;
+            this.Controls.Find("labelAciklama", false)[0].Text = urun.UrunAciklama;
+            this.Controls.Find("labelFiyat", false)[0].Text = urun.Fiyat.ToString() + " TL";
         }
     }
 }

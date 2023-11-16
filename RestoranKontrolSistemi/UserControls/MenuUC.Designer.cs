@@ -28,32 +28,53 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
+            this.menuPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.cmsMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiUrunEkle = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmsMenu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // menuPanel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(366, 180);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Menü";
+            this.menuPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.menuPanel.AutoScroll = true;
+            this.menuPanel.Location = new System.Drawing.Point(249, 0);
+            this.menuPanel.Name = "menuPanel";
+            this.menuPanel.Size = new System.Drawing.Size(510, 582);
+            this.menuPanel.TabIndex = 0;
+            // 
+            // cmsMenu
+            // 
+            this.cmsMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiUrunEkle});
+            this.cmsMenu.Name = "cmsMenu";
+            this.cmsMenu.Size = new System.Drawing.Size(125, 26);
+            // 
+            // tsmiUrunEkle
+            // 
+            this.tsmiUrunEkle.Image = global::RestoranKontrolSistemi.Properties.Resources.add_svg;
+            this.tsmiUrunEkle.Name = "tsmiUrunEkle";
+            this.tsmiUrunEkle.Size = new System.Drawing.Size(124, 22);
+            this.tsmiUrunEkle.Text = "Urun Ekle";
             // 
             // MenuUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label1);
+            this.ContextMenuStrip = this.cmsMenu;
+            this.Controls.Add(this.menuPanel);
             this.Name = "MenuUC";
-            this.Size = new System.Drawing.Size(802, 417);
+            this.Size = new System.Drawing.Size(1028, 582);
+            this.cmsMenu.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.FlowLayoutPanel menuPanel;
+        private System.Windows.Forms.ContextMenuStrip cmsMenu;
+        private System.Windows.Forms.ToolStripMenuItem tsmiUrunEkle;
     }
 }
