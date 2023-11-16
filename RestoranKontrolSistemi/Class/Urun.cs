@@ -10,6 +10,7 @@ namespace RestoranKontrolSistemi.Class
     {
         string urunAdi;
         string urunAciklama;
+        string urunKategori;
         float  fiyat;
 
         public Urun(string urunAdi, string urunAciklama, float fiyat) {
