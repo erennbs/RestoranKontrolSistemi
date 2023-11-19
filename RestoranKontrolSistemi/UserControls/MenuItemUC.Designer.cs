@@ -33,8 +33,11 @@
             this.labelYemekAdi = new System.Windows.Forms.Label();
             this.labelAciklama = new System.Windows.Forms.Label();
             this.labelFiyat = new System.Windows.Forms.Label();
-            this.pictureYemek = new System.Windows.Forms.PictureBox();
             this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiSil = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureYemek = new System.Windows.Forms.PictureBox();
+            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureYemek)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,6 +75,27 @@
             this.labelFiyat.TabIndex = 3;
             this.labelFiyat.Text = "Fiyat";
             // 
+            // ımageList1
+            // 
+            this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
+            this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.ımageList1.Images.SetKeyName(0, "noImage.jpg");
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiSil});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(87, 26);
+            // 
+            // tsmiSil
+            // 
+            this.tsmiSil.Image = global::RestoranKontrolSistemi.Properties.Resources.trash_svg;
+            this.tsmiSil.Name = "tsmiSil";
+            this.tsmiSil.Size = new System.Drawing.Size(86, 22);
+            this.tsmiSil.Text = "Sil";
+            this.tsmiSil.Click += new System.EventHandler(this.tsmiSil_Click);
+            // 
             // pictureYemek
             // 
             this.pictureYemek.BackColor = System.Drawing.SystemColors.Control;
@@ -81,23 +105,20 @@
             this.pictureYemek.TabIndex = 0;
             this.pictureYemek.TabStop = false;
             // 
-            // ımageList1
-            // 
-            this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
-            this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.ımageList1.Images.SetKeyName(0, "noImage.jpg");
-            // 
             // MenuItemUC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
+            this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.labelFiyat);
             this.Controls.Add(this.labelAciklama);
             this.Controls.Add(this.labelYemekAdi);
             this.Controls.Add(this.pictureYemek);
+            this.Margin = new System.Windows.Forms.Padding(0);
+            this.MaximumSize = new System.Drawing.Size(500, 150);
             this.Name = "MenuItemUC";
             this.Size = new System.Drawing.Size(500, 150);
+            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureYemek)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -111,5 +132,7 @@
         private System.Windows.Forms.Label labelAciklama;
         private System.Windows.Forms.Label labelFiyat;
         private System.Windows.Forms.ImageList ımageList1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSil;
     }
 }

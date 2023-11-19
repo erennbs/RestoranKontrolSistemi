@@ -55,10 +55,10 @@ namespace RestoranKontrolSistemi
             selectedButton = btnMenu;
             btnMenu.BackColor = buttonSelectedColor;
 
-            if (!(bottomPanel.Controls[0] is MenuUC))
+            if (!(bottomPanel.Controls[0] is MenuDeneme))
             {
                 bottomPanel.Controls.RemoveAt(0);
-                MenuUC menuUC = new MenuUC();
+                MenuDeneme menuUC = new MenuDeneme();
                 menuUC.Dock = DockStyle.Fill;
                 bottomPanel.Controls.Add(menuUC);
             }

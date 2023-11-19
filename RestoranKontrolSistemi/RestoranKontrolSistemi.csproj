@@ -63,17 +63,17 @@
     <Compile Include="UserControls\MasalarUC.Designer.cs">
       <DependentUpon>MasalarUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\MenuDeneme.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MenuDeneme.Designer.cs">
+      <DependentUpon>MenuDeneme.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\MenuItemUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\MenuItemUC.Designer.cs">
       <DependentUpon>MenuItemUC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\MenuUC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\MenuUC.Designer.cs">
-      <DependentUpon>MenuUC.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\SiparislerUC.cs">
       <SubType>UserControl</SubType>
@@ -97,11 +97,11 @@
     <EmbeddedResource Include="UserControls\MasalarUC.resx">
       <DependentUpon>MasalarUC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MenuDeneme.resx">
+      <DependentUpon>MenuDeneme.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\MenuItemUC.resx">
       <DependentUpon>MenuItemUC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\MenuUC.resx">
-      <DependentUpon>MenuUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SiparislerUC.resx">
       <DependentUpon>SiparislerUC.cs</DependentUpon>
@@ -130,6 +130,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Images\add-svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\trash-svg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
