@@ -1,5 +1,5 @@
 ﻿namespace RestoranKontrolSistemi.UserControls {
-    partial class MenuDeneme {
+    partial class MenuUC {
         /// <summary> 
         /// Required designer variable.
         /// </summary>

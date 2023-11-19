@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RestoranKontrolSistemi.UserControls {
-    public partial class MenuDeneme : UserControl {
+    public partial class MenuUC : UserControl {
 
         public static List<Urun> urunler = new List<Urun>();
 
-        public MenuDeneme() {
+        public MenuUC() {
             InitializeComponent();
             menuSplitContainer.Panel2Collapsed = true;
 

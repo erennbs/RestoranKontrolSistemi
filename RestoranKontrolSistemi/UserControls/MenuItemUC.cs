@@ -28,8 +28,8 @@ namespace RestoranKontrolSistemi.UserControls
         }
 
         private void tsmiSil_Click(object sender, EventArgs e) {
-            MenuDeneme.urunler.Remove(this.urun);
-            Console.WriteLine(MenuDeneme.urunler.Count);
+            MenuUC.urunler.Remove(this.urun);
+            Console.WriteLine(MenuUC.urunler.Count);
             this.Parent.Controls.Remove(this);
         }
     }
