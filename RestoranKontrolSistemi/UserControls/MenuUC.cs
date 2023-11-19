@@ -12,27 +12,16 @@ using System.Windows.Forms;
 namespace RestoranKontrolSistemi.UserControls {
     public partial class MenuUC : UserControl {
 
-        public static List<Urun> urunler = new List<Urun>();
-
         public MenuUC() {
             InitializeComponent();
             menuSplitContainer.Panel2Collapsed = true;
+            
 
-            foreach (Urun urun in urunler) {
+            foreach (Urun urun in Urunler.Instance.UrunlerList) {
                 MenuItemUC item = new MenuItemUC();
                 item.UrunuYaz(urun);
                 menuPanel.Controls.Add(item);
             }
-        }
-
-        public void UrunEKle(Urun urun) {
-            urunler.Add(urun);
-            Console.WriteLine(urunler.Count);
-        }
-
-        public void UrunSil(Urun urun) {
-            urunler.Remove(urun);
-            Console.WriteLine(urunler.Count);
         }
         
         private void tsmiUrunEkle_Click(object sender, EventArgs e) {
@@ -64,12 +53,18 @@ namespace RestoranKontrolSistemi.UserControls {
             }
 
             Urun yeniUrun = new Urun(ad, aciklama, fiyat);
-            UrunEKle(yeniUrun);
+            Urunler.Instance.UrunEkle(yeniUrun);
             
             MenuItemUC newMenuItem = new MenuItemUC();
             newMenuItem.UrunuYaz(yeniUrun);
+            Console.WriteLine(newMenuItem.Size);
+            Console.WriteLine(menuPanel.Size);
 
             menuPanel.Controls.Add(newMenuItem);
+
+            Console.WriteLine(newMenuItem.Size);
+            Console.WriteLine(menuPanel.Size);
+
 
             TextBoxTemizle();
         }

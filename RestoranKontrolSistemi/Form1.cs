@@ -1,4 +1,5 @@
-﻿using RestoranKontrolSistemi.UserControls;
+﻿using RestoranKontrolSistemi.Class;
+using RestoranKontrolSistemi.UserControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,6 +30,9 @@ namespace RestoranKontrolSistemi
             MasalarUC masalarUC = new MasalarUC();
             masalarUC.Dock = DockStyle.Fill;
             bottomPanel.Controls.Add(masalarUC);
+
+            // Initialize Urunler
+            Urunler urunler = new Urunler();
         }
 
         private void btnMasalar_Click(object sender, EventArgs e)

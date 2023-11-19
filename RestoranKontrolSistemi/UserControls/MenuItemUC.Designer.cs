@@ -107,15 +107,16 @@
             // 
             // MenuItemUC
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.White;
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.labelFiyat);
             this.Controls.Add(this.labelAciklama);
             this.Controls.Add(this.labelYemekAdi);
             this.Controls.Add(this.pictureYemek);
-            this.Margin = new System.Windows.Forms.Padding(0);
+            this.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.MaximumSize = new System.Drawing.Size(500, 150);
+            this.MinimumSize = new System.Drawing.Size(500, 150);
             this.Name = "MenuItemUC";
             this.Size = new System.Drawing.Size(500, 150);
             this.contextMenuStrip1.ResumeLayout(false);

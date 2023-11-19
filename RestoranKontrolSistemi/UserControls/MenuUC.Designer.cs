@@ -95,6 +95,7 @@
             this.menuPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.menuPanel.AutoScroll = true;
             this.menuPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.menuPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.menuPanel.Location = new System.Drawing.Point(101, 0);
             this.menuPanel.Margin = new System.Windows.Forms.Padding(0);
             this.menuPanel.MaximumSize = new System.Drawing.Size(510, 2000);
@@ -124,7 +125,7 @@
             this.btnEkle.ForeColor = System.Drawing.Color.White;
             this.btnEkle.Location = new System.Drawing.Point(32, 553);
             this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(210, 26);
+            this.btnEkle.Size = new System.Drawing.Size(214, 26);
             this.btnEkle.TabIndex = 7;
             this.btnEkle.Text = "Ekle";
             this.btnEkle.UseVisualStyleBackColor = false;
@@ -148,7 +149,7 @@
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnClose.Location = new System.Drawing.Point(244, 3);
+            this.btnClose.Location = new System.Drawing.Point(248, 3);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(41, 35);
             this.btnClose.TabIndex = 8;
@@ -164,7 +165,7 @@
             this.txtBoxFiyat.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtBoxFiyat.Location = new System.Drawing.Point(113, 178);
             this.txtBoxFiyat.Name = "txtBoxFiyat";
-            this.txtBoxFiyat.Size = new System.Drawing.Size(129, 23);
+            this.txtBoxFiyat.Size = new System.Drawing.Size(133, 23);
             this.txtBoxFiyat.TabIndex = 6;
             // 
             // txtBoxAciklama
@@ -176,7 +177,7 @@
             this.txtBoxAciklama.Location = new System.Drawing.Point(113, 118);
             this.txtBoxAciklama.Multiline = true;
             this.txtBoxAciklama.Name = "txtBoxAciklama";
-            this.txtBoxAciklama.Size = new System.Drawing.Size(129, 51);
+            this.txtBoxAciklama.Size = new System.Drawing.Size(133, 51);
             this.txtBoxAciklama.TabIndex = 5;
             // 
             // txtBoxAd
@@ -187,7 +188,7 @@
             this.txtBoxAd.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtBoxAd.Location = new System.Drawing.Point(113, 85);
             this.txtBoxAd.Name = "txtBoxAd";
-            this.txtBoxAd.Size = new System.Drawing.Size(129, 23);
+            this.txtBoxAd.Size = new System.Drawing.Size(133, 23);
             this.txtBoxAd.TabIndex = 4;
             // 
             // labelFiyat
@@ -223,12 +224,12 @@
             this.labelAd.TabIndex = 1;
             this.labelAd.Text = "Ad";
             // 
-            // MenuDeneme
+            // MenuUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.menuSplitContainer);
-            this.Name = "MenuDeneme";
+            this.Name = "MenuUC";
             this.Size = new System.Drawing.Size(999, 589);
             this.menuSplitContainer.Panel1.ResumeLayout(false);
             this.menuSplitContainer.Panel2.ResumeLayout(false);
