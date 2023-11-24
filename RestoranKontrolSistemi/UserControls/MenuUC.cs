@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace RestoranKontrolSistemi.UserControls {
 
         public MenuUC() {
             InitializeComponent();
-
+            
             if(Instance == null) {
                 Instance = this;
             } else {
@@ -26,11 +27,11 @@ namespace RestoranKontrolSistemi.UserControls {
 
             menuSplitContainer.Panel2Collapsed = true;
 
-            foreach (Urun urun in Urunler.Instance.UrunlerList) {
-                MenuItemUC item = new MenuItemUC();
-                item.UrunuYaz(urun);
-                menuPanel.Controls.Add(item);
-            }
+            //foreach (Urun urun in Urunler.Instance.UrunlerList) {
+            //    MenuItemUC item = new MenuItemUC();
+            //    item.UrunuYaz(urun);
+            //    menuPanel.Controls.Add(item);
+            //}
         }
         
         private void tsmiUrunEkle_Click(object sender, EventArgs e) {
@@ -71,7 +72,7 @@ namespace RestoranKontrolSistemi.UserControls {
             Urunler.Instance.UrunEkle(yeniUrun);
             
             MenuItemUC newMenuItem = new MenuItemUC();
-            newMenuItem.UrunuYaz(yeniUrun);
+            newMenuItem.UrunuYaz(yeniUrun, ofdResim.FileName);
             Console.WriteLine(newMenuItem.Size);
             Console.WriteLine(menuPanel.Size);
 
@@ -90,6 +91,16 @@ namespace RestoranKontrolSistemi.UserControls {
             txtBoxFiyat.Clear();
             labelWarning.Text = "";
             cbKategori.SelectedIndex = 0;
+            ofdResim.FileName = "";
+            btnResimSec.Text = "Seç";
+        }
+
+        private void btnResimSec_Click(object sender, EventArgs e) {
+            DialogResult result = ofdResim.ShowDialog();
+            if (result == DialogResult.OK) {
+                string[] path = ofdResim.FileName.Split(Path.DirectorySeparatorChar);
+                btnResimSec.Text = path[path.Length - 1];
+            }
         }
     }
 }

@@ -28,6 +28,10 @@
             this.cmsMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiUrunEkle = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnResimSec = new System.Windows.Forms.Button();
+            this.labelResim = new System.Windows.Forms.Label();
+            this.cbKategori = new System.Windows.Forms.ComboBox();
+            this.labelKategori = new System.Windows.Forms.Label();
             this.labelWarning = new System.Windows.Forms.Label();
             this.btnEkle = new System.Windows.Forms.Button();
             this.labelYeniUrun = new System.Windows.Forms.Label();
@@ -38,8 +42,7 @@
             this.labelFiyat = new System.Windows.Forms.Label();
             this.labelAciklama = new System.Windows.Forms.Label();
             this.labelAd = new System.Windows.Forms.Label();
-            this.labelKategori = new System.Windows.Forms.Label();
-            this.cbKategori = new System.Windows.Forms.ComboBox();
+            this.ofdResim = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.menuSplitContainer)).BeginInit();
             this.menuSplitContainer.Panel1.SuspendLayout();
             this.menuSplitContainer.Panel2.SuspendLayout();
@@ -61,7 +64,9 @@
             // 
             // menuSplitContainer.Panel2
             // 
-            this.menuSplitContainer.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.menuSplitContainer.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(227)))), ((int)(((byte)(206)))));
+            this.menuSplitContainer.Panel2.Controls.Add(this.btnResimSec);
+            this.menuSplitContainer.Panel2.Controls.Add(this.labelResim);
             this.menuSplitContainer.Panel2.Controls.Add(this.cbKategori);
             this.menuSplitContainer.Panel2.Controls.Add(this.labelKategori);
             this.menuSplitContainer.Panel2.Controls.Add(this.labelWarning);
@@ -108,12 +113,70 @@
             this.menuPanel.Size = new System.Drawing.Size(510, 589);
             this.menuPanel.TabIndex = 1;
             // 
+            // btnResimSec
+            // 
+            this.btnResimSec.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnResimSec.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(144)))), ((int)(((byte)(114)))));
+            this.btnResimSec.FlatAppearance.BorderSize = 0;
+            this.btnResimSec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResimSec.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnResimSec.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnResimSec.Location = new System.Drawing.Point(113, 253);
+            this.btnResimSec.Name = "btnResimSec";
+            this.btnResimSec.Size = new System.Drawing.Size(135, 23);
+            this.btnResimSec.TabIndex = 10;
+            this.btnResimSec.Text = "Seç";
+            this.btnResimSec.UseVisualStyleBackColor = false;
+            this.btnResimSec.Click += new System.EventHandler(this.btnResimSec_Click);
+            // 
+            // labelResim
+            // 
+            this.labelResim.AutoSize = true;
+            this.labelResim.Font = new System.Drawing.Font("Microsoft New Tai Lue", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelResim.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.labelResim.Location = new System.Drawing.Point(29, 256);
+            this.labelResim.Name = "labelResim";
+            this.labelResim.Size = new System.Drawing.Size(50, 16);
+            this.labelResim.TabIndex = 5;
+            this.labelResim.Text = "Resim";
+            // 
+            // cbKategori
+            // 
+            this.cbKategori.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbKategori.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbKategori.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbKategori.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cbKategori.FormattingEnabled = true;
+            this.cbKategori.Items.AddRange(new object[] {
+            "Başlangıç",
+            "Ana Yemek",
+            "Tatlı",
+            "İçecek"});
+            this.cbKategori.Location = new System.Drawing.Point(113, 216);
+            this.cbKategori.Name = "cbKategori";
+            this.cbKategori.Size = new System.Drawing.Size(135, 23);
+            this.cbKategori.TabIndex = 9;
+            this.cbKategori.Text = "Başlangıç";
+            // 
+            // labelKategori
+            // 
+            this.labelKategori.AutoSize = true;
+            this.labelKategori.Font = new System.Drawing.Font("Microsoft New Tai Lue", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelKategori.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.labelKategori.Location = new System.Drawing.Point(29, 218);
+            this.labelKategori.Name = "labelKategori";
+            this.labelKategori.Size = new System.Drawing.Size(67, 16);
+            this.labelKategori.TabIndex = 4;
+            this.labelKategori.Text = "Kategori";
+            // 
             // labelWarning
             // 
             this.labelWarning.AutoSize = true;
             this.labelWarning.Font = new System.Drawing.Font("Microsoft New Tai Lue", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelWarning.ForeColor = System.Drawing.Color.Firebrick;
-            this.labelWarning.Location = new System.Drawing.Point(110, 268);
+            this.labelWarning.Location = new System.Drawing.Point(110, 301);
             this.labelWarning.Name = "labelWarning";
             this.labelWarning.Size = new System.Drawing.Size(0, 16);
             this.labelWarning.TabIndex = 9;
@@ -129,8 +192,8 @@
             this.btnEkle.ForeColor = System.Drawing.Color.White;
             this.btnEkle.Location = new System.Drawing.Point(32, 553);
             this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(214, 26);
-            this.btnEkle.TabIndex = 8;
+            this.btnEkle.Size = new System.Drawing.Size(216, 26);
+            this.btnEkle.TabIndex = 11;
             this.btnEkle.Text = "Ekle";
             this.btnEkle.UseVisualStyleBackColor = false;
             this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
@@ -150,13 +213,13 @@
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(221)))), ((int)(((byte)(196)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnClose.Location = new System.Drawing.Point(248, 3);
+            this.btnClose.Location = new System.Drawing.Point(243, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(41, 35);
-            this.btnClose.TabIndex = 9;
+            this.btnClose.TabIndex = 12;
             this.btnClose.Text = "✖";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -169,8 +232,8 @@
             this.txtBoxFiyat.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtBoxFiyat.Location = new System.Drawing.Point(113, 178);
             this.txtBoxFiyat.Name = "txtBoxFiyat";
-            this.txtBoxFiyat.Size = new System.Drawing.Size(133, 23);
-            this.txtBoxFiyat.TabIndex = 6;
+            this.txtBoxFiyat.Size = new System.Drawing.Size(135, 23);
+            this.txtBoxFiyat.TabIndex = 8;
             // 
             // txtBoxAciklama
             // 
@@ -181,8 +244,8 @@
             this.txtBoxAciklama.Location = new System.Drawing.Point(113, 118);
             this.txtBoxAciklama.Multiline = true;
             this.txtBoxAciklama.Name = "txtBoxAciklama";
-            this.txtBoxAciklama.Size = new System.Drawing.Size(133, 51);
-            this.txtBoxAciklama.TabIndex = 5;
+            this.txtBoxAciklama.Size = new System.Drawing.Size(135, 51);
+            this.txtBoxAciklama.TabIndex = 7;
             // 
             // txtBoxAd
             // 
@@ -192,8 +255,8 @@
             this.txtBoxAd.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtBoxAd.Location = new System.Drawing.Point(113, 85);
             this.txtBoxAd.Name = "txtBoxAd";
-            this.txtBoxAd.Size = new System.Drawing.Size(133, 23);
-            this.txtBoxAd.TabIndex = 4;
+            this.txtBoxAd.Size = new System.Drawing.Size(135, 23);
+            this.txtBoxAd.TabIndex = 6;
             // 
             // labelFiyat
             // 
@@ -220,6 +283,7 @@
             // labelAd
             // 
             this.labelAd.AutoSize = true;
+            this.labelAd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(227)))), ((int)(((byte)(206)))));
             this.labelAd.Font = new System.Drawing.Font("Microsoft New Tai Lue", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelAd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.labelAd.Location = new System.Drawing.Point(29, 87);
@@ -228,33 +292,9 @@
             this.labelAd.TabIndex = 1;
             this.labelAd.Text = "Ad";
             // 
-            // labelKategori
+            // ofdResim
             // 
-            this.labelKategori.AutoSize = true;
-            this.labelKategori.Font = new System.Drawing.Font("Microsoft New Tai Lue", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelKategori.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.labelKategori.Location = new System.Drawing.Point(29, 218);
-            this.labelKategori.Name = "labelKategori";
-            this.labelKategori.Size = new System.Drawing.Size(67, 16);
-            this.labelKategori.TabIndex = 10;
-            this.labelKategori.Text = "Kategori";
-            // 
-            // cbKategori
-            // 
-            this.cbKategori.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbKategori.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.cbKategori.FormattingEnabled = true;
-            this.cbKategori.Items.AddRange(new object[] {
-            "Başlangıç",
-            "Ana Yemek",
-            "Tatlı",
-            "İçecek"});
-            this.cbKategori.Location = new System.Drawing.Point(113, 216);
-            this.cbKategori.Name = "cbKategori";
-            this.cbKategori.Size = new System.Drawing.Size(133, 23);
-            this.cbKategori.TabIndex = 7;
-            this.cbKategori.Text = "Başlangıç";
+            this.ofdResim.Filter = "Image Files|*.jpg;*.jpeg;*.png;";
             // 
             // MenuUC
             // 
@@ -291,5 +331,8 @@
         private System.Windows.Forms.Label labelWarning;
         private System.Windows.Forms.ComboBox cbKategori;
         private System.Windows.Forms.Label labelKategori;
+        private System.Windows.Forms.OpenFileDialog ofdResim;
+        private System.Windows.Forms.Button btnResimSec;
+        private System.Windows.Forms.Label labelResim;
     }
 }

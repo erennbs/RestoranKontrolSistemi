@@ -20,11 +20,19 @@ namespace RestoranKontrolSistemi.UserControls
             InitializeComponent();
         }
 
-        public void UrunuYaz(Urun urun) {
+        public void UrunuYaz(Urun urun, string imagePath) {
             this.urun = urun;
             this.Controls.Find("labelYemekAdi", false)[0].Text = urun.UrunAdi;
             this.Controls.Find("labelAciklama", false)[0].Text = urun.UrunAciklama;
             this.Controls.Find("labelFiyat", false)[0].Text = urun.Fiyat.ToString("f") + " TL";
+
+            if (imagePath != "") {
+                try {
+                    pictureYemek.Image = Image.FromFile(imagePath);
+                } catch {
+                    Console.WriteLine("Can't load image from " + imagePath);
+                }
+            }
         }
 
         private void tsmiSil_Click(object sender, EventArgs e) {

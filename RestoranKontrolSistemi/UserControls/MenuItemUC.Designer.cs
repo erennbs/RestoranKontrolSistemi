@@ -80,6 +80,7 @@
             this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
             this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.ımageList1.Images.SetKeyName(0, "noImage.jpg");
+            this.ımageList1.Images.SetKeyName(1, "soup.png");
             // 
             // contextMenuStrip1
             // 
@@ -99,9 +100,11 @@
             // pictureYemek
             // 
             this.pictureYemek.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureYemek.Image = global::RestoranKontrolSistemi.Properties.Resources.no_image_1;
             this.pictureYemek.Location = new System.Drawing.Point(15, 15);
             this.pictureYemek.Name = "pictureYemek";
             this.pictureYemek.Size = new System.Drawing.Size(120, 120);
+            this.pictureYemek.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureYemek.TabIndex = 0;
             this.pictureYemek.TabStop = false;
             // 
