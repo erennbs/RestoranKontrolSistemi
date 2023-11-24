@@ -38,6 +38,8 @@
             this.labelFiyat = new System.Windows.Forms.Label();
             this.labelAciklama = new System.Windows.Forms.Label();
             this.labelAd = new System.Windows.Forms.Label();
+            this.labelKategori = new System.Windows.Forms.Label();
+            this.cbKategori = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.menuSplitContainer)).BeginInit();
             this.menuSplitContainer.Panel1.SuspendLayout();
             this.menuSplitContainer.Panel2.SuspendLayout();
@@ -60,6 +62,8 @@
             // menuSplitContainer.Panel2
             // 
             this.menuSplitContainer.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.menuSplitContainer.Panel2.Controls.Add(this.cbKategori);
+            this.menuSplitContainer.Panel2.Controls.Add(this.labelKategori);
             this.menuSplitContainer.Panel2.Controls.Add(this.labelWarning);
             this.menuSplitContainer.Panel2.Controls.Add(this.btnEkle);
             this.menuSplitContainer.Panel2.Controls.Add(this.labelYeniUrun);
@@ -71,7 +75,7 @@
             this.menuSplitContainer.Panel2.Controls.Add(this.labelAciklama);
             this.menuSplitContainer.Panel2.Controls.Add(this.labelAd);
             this.menuSplitContainer.Size = new System.Drawing.Size(999, 589);
-            this.menuSplitContainer.SplitterDistance = 709;
+            this.menuSplitContainer.SplitterDistance = 713;
             this.menuSplitContainer.SplitterWidth = 2;
             this.menuSplitContainer.TabIndex = 0;
             // 
@@ -96,7 +100,7 @@
             this.menuPanel.AutoScroll = true;
             this.menuPanel.BackColor = System.Drawing.SystemColors.Control;
             this.menuPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.menuPanel.Location = new System.Drawing.Point(101, 0);
+            this.menuPanel.Location = new System.Drawing.Point(102, 0);
             this.menuPanel.Margin = new System.Windows.Forms.Padding(0);
             this.menuPanel.MaximumSize = new System.Drawing.Size(510, 2000);
             this.menuPanel.Name = "menuPanel";
@@ -109,7 +113,7 @@
             this.labelWarning.AutoSize = true;
             this.labelWarning.Font = new System.Drawing.Font("Microsoft New Tai Lue", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelWarning.ForeColor = System.Drawing.Color.Firebrick;
-            this.labelWarning.Location = new System.Drawing.Point(110, 246);
+            this.labelWarning.Location = new System.Drawing.Point(110, 268);
             this.labelWarning.Name = "labelWarning";
             this.labelWarning.Size = new System.Drawing.Size(0, 16);
             this.labelWarning.TabIndex = 9;
@@ -126,7 +130,7 @@
             this.btnEkle.Location = new System.Drawing.Point(32, 553);
             this.btnEkle.Name = "btnEkle";
             this.btnEkle.Size = new System.Drawing.Size(214, 26);
-            this.btnEkle.TabIndex = 7;
+            this.btnEkle.TabIndex = 8;
             this.btnEkle.Text = "Ekle";
             this.btnEkle.UseVisualStyleBackColor = false;
             this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
@@ -152,7 +156,7 @@
             this.btnClose.Location = new System.Drawing.Point(248, 3);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(41, 35);
-            this.btnClose.TabIndex = 8;
+            this.btnClose.TabIndex = 9;
             this.btnClose.Text = "✖";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -224,6 +228,34 @@
             this.labelAd.TabIndex = 1;
             this.labelAd.Text = "Ad";
             // 
+            // labelKategori
+            // 
+            this.labelKategori.AutoSize = true;
+            this.labelKategori.Font = new System.Drawing.Font("Microsoft New Tai Lue", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelKategori.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.labelKategori.Location = new System.Drawing.Point(29, 218);
+            this.labelKategori.Name = "labelKategori";
+            this.labelKategori.Size = new System.Drawing.Size(67, 16);
+            this.labelKategori.TabIndex = 10;
+            this.labelKategori.Text = "Kategori";
+            // 
+            // cbKategori
+            // 
+            this.cbKategori.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbKategori.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cbKategori.FormattingEnabled = true;
+            this.cbKategori.Items.AddRange(new object[] {
+            "Başlangıç",
+            "Ana Yemek",
+            "Tatlı",
+            "İçecek"});
+            this.cbKategori.Location = new System.Drawing.Point(113, 216);
+            this.cbKategori.Name = "cbKategori";
+            this.cbKategori.Size = new System.Drawing.Size(133, 23);
+            this.cbKategori.TabIndex = 7;
+            this.cbKategori.Text = "Başlangıç";
+            // 
             // MenuUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -257,5 +289,7 @@
         private System.Windows.Forms.Label labelYeniUrun;
         private System.Windows.Forms.Button btnEkle;
         private System.Windows.Forms.Label labelWarning;
+        private System.Windows.Forms.ComboBox cbKategori;
+        private System.Windows.Forms.Label labelKategori;
     }
 }

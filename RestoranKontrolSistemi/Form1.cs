@@ -62,9 +62,14 @@ namespace RestoranKontrolSistemi
             if (!(bottomPanel.Controls[0] is MenuUC))
             {
                 bottomPanel.Controls.RemoveAt(0);
+                
+                if (MenuUC.Instance != null) {
+                    bottomPanel.Controls.Add(MenuUC.Instance);
+                } else { 
                 MenuUC menuUC = new MenuUC();
                 menuUC.Dock = DockStyle.Fill;
                 bottomPanel.Controls.Add(menuUC);
+                }
             }
         }
 

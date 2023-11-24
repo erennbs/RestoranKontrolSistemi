@@ -12,10 +12,19 @@ using System.Windows.Forms;
 namespace RestoranKontrolSistemi.UserControls {
     public partial class MenuUC : UserControl {
 
+        public static MenuUC Instance { get; private set; }
+        string[] kategoriler = { "Başlangıç", "Ana Yemek", "Tatlı", "İçecek" };
+
         public MenuUC() {
             InitializeComponent();
+
+            if(Instance == null) {
+                Instance = this;
+            } else {
+                throw new Exception("Cannot have more than one instance of MenuUC!");
+            }
+
             menuSplitContainer.Panel2Collapsed = true;
-            
 
             foreach (Urun urun in Urunler.Instance.UrunlerList) {
                 MenuItemUC item = new MenuItemUC();
@@ -35,7 +44,8 @@ namespace RestoranKontrolSistemi.UserControls {
         private void btnEkle_Click(object sender, EventArgs e) {
             string ad = txtBoxAd.Text;
             string aciklama = txtBoxAciklama.Text;
-            float fiyat; 
+            float fiyat;
+            string kategori = cbKategori.Text;
             
             if (txtBoxAd.Text.Length == 0) {
                 labelWarning.Text = "* Geçersiz Ad!";
@@ -52,7 +62,12 @@ namespace RestoranKontrolSistemi.UserControls {
                 return;
             }
 
-            Urun yeniUrun = new Urun(ad, aciklama, fiyat);
+            if (!kategoriler.Contains(kategori)) {
+                labelWarning.Text = "* Geçersiz Kategori";
+                return;
+            }
+
+            Urun yeniUrun = new Urun(ad, aciklama, fiyat, kategori);
             Urunler.Instance.UrunEkle(yeniUrun);
             
             MenuItemUC newMenuItem = new MenuItemUC();
@@ -61,7 +76,7 @@ namespace RestoranKontrolSistemi.UserControls {
             Console.WriteLine(menuPanel.Size);
 
             menuPanel.Controls.Add(newMenuItem);
-
+            menuPanel.Width = 510;
             Console.WriteLine(newMenuItem.Size);
             Console.WriteLine(menuPanel.Size);
 
@@ -74,6 +89,7 @@ namespace RestoranKontrolSistemi.UserControls {
             txtBoxAciklama.Clear();
             txtBoxFiyat.Clear();
             labelWarning.Text = "";
+            cbKategori.SelectedIndex = 0;
         }
     }
 }

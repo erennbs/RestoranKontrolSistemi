@@ -23,10 +23,11 @@ namespace RestoranKontrolSistemi.Class {
         }
 
 
-        public Urun(string urunAdi, string urunAciklama, float fiyat) {
+        public Urun(string urunAdi, string urunAciklama, float fiyat, string kategori) {
             this.urunAdi = urunAdi;
             this.urunAciklama = urunAciklama;
             this.fiyat = fiyat;
+            this.urunKategori = kategori;
         }
     }
 }
