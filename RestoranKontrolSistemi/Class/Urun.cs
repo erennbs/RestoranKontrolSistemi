@@ -6,28 +6,21 @@ using System.Threading.Tasks;
 
 namespace RestoranKontrolSistemi.Class {
     public class Urun {
-        string urunAdi;
-        string urunAciklama;
-        string urunKategori;
-        float fiyat;
 
-        public string UrunAdi {
-            get {return urunAdi;} }
+        public string UrunAdi { get; private set; }
 
-        public string UrunAciklama {
-            get { return urunAciklama;}
-        }
+        public string UrunAciklama { get; private set; }
+        
+        public string UrunKategori { get; private set; }
 
-        public float Fiyat {
-            get { return fiyat;}
-        }
+        public float Fiyat { get; private set; }
 
 
         public Urun(string urunAdi, string urunAciklama, float fiyat, string kategori) {
-            this.urunAdi = urunAdi;
-            this.urunAciklama = urunAciklama;
-            this.fiyat = fiyat;
-            this.urunKategori = kategori;
+            this.UrunAdi = urunAdi;
+            this.UrunAciklama = urunAciklama;
+            this.Fiyat = fiyat;
+            this.UrunKategori = kategori;
         }
     }
 }
