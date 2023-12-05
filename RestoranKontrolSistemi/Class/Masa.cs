@@ -3,31 +3,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace RestoranKontrolSistemi.Class
 {
     internal class Masa
     {
-        int masaNumarasi;
-        bool dolu;
-        List<Siparis> siparisler;
+        public int MasaNumarasi { get; private set; }
+        public bool Dolu { get; private set; }
+        public BindingList<Siparis> SiparislerList {  get; private set; }
+
 
         public Masa(int masaNumarasi) {
-            this.masaNumarasi = masaNumarasi;
-            this.dolu = false;
-            this.siparisler = new List<Siparis>();
+            this.MasaNumarasi = masaNumarasi;
+            this.Dolu = false;
+            this.SiparislerList = new BindingList<Siparis>();
         }
 
         public void MasaAc() {
-            dolu = true;
+            Dolu = true;
         }
 
         public void MasaKapat() {
-            siparisler.Clear();
+            SiparislerList.Clear();
+            Dolu = false;
         }
 
         public void SiparisEkle(Siparis siparis) {
-            siparisler.Add(siparis);
+            SiparislerList.Add(siparis);
         }
     }
 }
