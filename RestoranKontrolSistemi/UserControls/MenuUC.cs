@@ -27,11 +27,11 @@ namespace RestoranKontrolSistemi.UserControls {
 
             menuSplitContainer.Panel2Collapsed = true;
 
-            //foreach (Urun urun in Urunler.Instance.UrunlerList) {
-            //    MenuItemUC item = new MenuItemUC();
-            //    item.UrunuYaz(urun);
-            //    menuPanel.Controls.Add(item);
-            //}
+            foreach (Urun urun in Urunler.Instance.UrunlerList) {
+                MenuItemUC item = new MenuItemUC();
+                item.UrunuYaz(urun, null);
+                menuPanel.Controls.Add(item);
+            }
         }
         
         private void tsmiUrunEkle_Click(object sender, EventArgs e) {

@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\Masa.cs" />
+    <Compile Include="Class\Masalar.cs" />
     <Compile Include="Class\Siparis.cs" />
     <Compile Include="Class\Urun.cs" />
     <Compile Include="Class\Urunler.cs" />
@@ -97,6 +98,7 @@
     </Compile>
     <EmbeddedResource Include="UserControls\MasalarUC.resx">
       <DependentUpon>MasalarUC.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\MenuUC.resx">
       <DependentUpon>MenuUC.cs</DependentUpon>

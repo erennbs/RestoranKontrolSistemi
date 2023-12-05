@@ -23,6 +23,10 @@ namespace RestoranKontrolSistemi
         {
             InitializeComponent();
 
+            // Initialize Urunler and Masalar
+            Urunler urunler = new Urunler();
+            Masalar masalar = new Masalar();
+
             // Start application with Masalar selected
             selectedButton = btnMasalar;
             btnMasalar.BackColor = buttonSelectedColor;
@@ -31,8 +35,7 @@ namespace RestoranKontrolSistemi
             masalarUC.Dock = DockStyle.Fill;
             bottomPanel.Controls.Add(masalarUC);
 
-            // Initialize Urunler
-            Urunler urunler = new Urunler();
+            
         }
 
         private void btnMasalar_Click(object sender, EventArgs e)
@@ -45,9 +48,14 @@ namespace RestoranKontrolSistemi
 
             if (!(bottomPanel.Controls[0] is MasalarUC)) {
                 bottomPanel.Controls.RemoveAt(0);
-                MasalarUC masalarUC = new MasalarUC();
-                masalarUC.Dock = DockStyle.Fill;
-                bottomPanel.Controls.Add(masalarUC);
+                
+                if (MasalarUC.Instance != null) {
+                    bottomPanel.Controls.Add(MasalarUC.Instance);
+                } else {
+                    MasalarUC masalarUC = new MasalarUC();
+                    masalarUC.Dock = DockStyle.Fill;
+                    bottomPanel.Controls.Add(masalarUC);
+                }
             }
         }
 
