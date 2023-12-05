@@ -64,7 +64,7 @@
             // 
             // menuSplitContainer.Panel2
             // 
-            this.menuSplitContainer.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(227)))), ((int)(((byte)(206)))));
+            this.menuSplitContainer.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(247)))), ((int)(((byte)(228)))));
             this.menuSplitContainer.Panel2.Controls.Add(this.btnResimSec);
             this.menuSplitContainer.Panel2.Controls.Add(this.labelResim);
             this.menuSplitContainer.Panel2.Controls.Add(this.cbKategori);
@@ -124,7 +124,7 @@
             this.btnResimSec.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnResimSec.Location = new System.Drawing.Point(113, 253);
             this.btnResimSec.Name = "btnResimSec";
-            this.btnResimSec.Size = new System.Drawing.Size(135, 23);
+            this.btnResimSec.Size = new System.Drawing.Size(137, 23);
             this.btnResimSec.TabIndex = 10;
             this.btnResimSec.Text = "Seç";
             this.btnResimSec.UseVisualStyleBackColor = false;
@@ -156,7 +156,7 @@
             "İçecek"});
             this.cbKategori.Location = new System.Drawing.Point(113, 216);
             this.cbKategori.Name = "cbKategori";
-            this.cbKategori.Size = new System.Drawing.Size(135, 23);
+            this.cbKategori.Size = new System.Drawing.Size(137, 23);
             this.cbKategori.TabIndex = 9;
             this.cbKategori.Text = "Başlangıç";
             // 
@@ -192,7 +192,7 @@
             this.btnEkle.ForeColor = System.Drawing.Color.White;
             this.btnEkle.Location = new System.Drawing.Point(32, 553);
             this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(216, 26);
+            this.btnEkle.Size = new System.Drawing.Size(218, 26);
             this.btnEkle.TabIndex = 11;
             this.btnEkle.Text = "Ekle";
             this.btnEkle.UseVisualStyleBackColor = false;
@@ -216,7 +216,7 @@
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(221)))), ((int)(((byte)(196)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnClose.Location = new System.Drawing.Point(243, 0);
+            this.btnClose.Location = new System.Drawing.Point(245, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(41, 35);
             this.btnClose.TabIndex = 12;
@@ -232,7 +232,7 @@
             this.txtBoxFiyat.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtBoxFiyat.Location = new System.Drawing.Point(113, 178);
             this.txtBoxFiyat.Name = "txtBoxFiyat";
-            this.txtBoxFiyat.Size = new System.Drawing.Size(135, 23);
+            this.txtBoxFiyat.Size = new System.Drawing.Size(137, 23);
             this.txtBoxFiyat.TabIndex = 8;
             // 
             // txtBoxAciklama
@@ -244,7 +244,7 @@
             this.txtBoxAciklama.Location = new System.Drawing.Point(113, 118);
             this.txtBoxAciklama.Multiline = true;
             this.txtBoxAciklama.Name = "txtBoxAciklama";
-            this.txtBoxAciklama.Size = new System.Drawing.Size(135, 51);
+            this.txtBoxAciklama.Size = new System.Drawing.Size(137, 51);
             this.txtBoxAciklama.TabIndex = 7;
             // 
             // txtBoxAd
@@ -255,7 +255,7 @@
             this.txtBoxAd.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtBoxAd.Location = new System.Drawing.Point(113, 85);
             this.txtBoxAd.Name = "txtBoxAd";
-            this.txtBoxAd.Size = new System.Drawing.Size(135, 23);
+            this.txtBoxAd.Size = new System.Drawing.Size(137, 23);
             this.txtBoxAd.TabIndex = 6;
             // 
             // labelFiyat

@@ -39,15 +39,6 @@ namespace RestoranKontrolSistemi.UserControls
 
             MasalariEkle();
 
-            //for (int i = 0; i < 10; i++) {
-            //    Button newButton = new Button();
-            //    newButton.Size = new Size(120, 90);
-            //    newButton.Text = "Masa " + i.ToString();
-            //    newButton.Click += button_Click;
-
-            //    flpMasalar.Controls.Add(newButton);
-            //}
-
         }
 
         void MasalariEkle() {
@@ -56,6 +47,7 @@ namespace RestoranKontrolSistemi.UserControls
                 Button newButton = new Button();
                 newButton.Text = "Masa " + (i + 1).ToString();
                 newButton.Size = new Size(120, 90);
+                newButton.Font = new Font("Microsoft New Tai Lue", 10);
                 newButton.Click += button_Click;
 
                 flpMasalar.Controls.Add(newButton);
@@ -92,9 +84,6 @@ namespace RestoranKontrolSistemi.UserControls
             if (!masaSelected.Dolu || lbUrunler.SelectedIndex == -1) return;
 
             IEnumerable<Urun> urunQuery = Urunler.Instance.UrunlerList.Where<Urun>(urun => urun.UrunAdi == lbUrunler.Text);
-                //from urun in Urunler.Instance.UrunlerList
-                //where urun.UrunAdi == lbUrunler.Text
-                //select urun;
 
             Urun urunFound = urunQuery.FirstOrDefault();
 
@@ -155,8 +144,5 @@ namespace RestoranKontrolSistemi.UserControls
             MessageBox.Show("Miktar Sayı Olmalıdır!", "Hata");
         }
 
-        private void dataGridSiparis_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e) {
-            Console.WriteLine(masaSelected.SiparislerList.Count.ToString());
-        }
     }
 }

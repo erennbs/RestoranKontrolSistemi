@@ -58,6 +58,7 @@
             // masalarSplitContainer.Panel2
             // 
             this.masalarSplitContainer.Panel2.AutoScroll = true;
+            this.masalarSplitContainer.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(247)))), ((int)(((byte)(228)))));
             this.masalarSplitContainer.Panel2.Controls.Add(this.dataGridSiparis);
             this.masalarSplitContainer.Panel2.Controls.Add(this.btnMasaAcKapa);
             this.masalarSplitContainer.Panel2.Controls.Add(this.lbUrunler);
@@ -91,7 +92,6 @@
             this.dataGridSiparis.TabIndex = 16;
             this.dataGridSiparis.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridSiparis_CellValueChanged);
             this.dataGridSiparis.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridSiparis_DataError);
-            this.dataGridSiparis.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dataGridSiparis_RowsRemoved);
             // 
             // UrunAdi
             // 
