@@ -26,6 +26,7 @@ namespace RestoranKontrolSistemi
             // Initialize Urunler and Masalar
             Urunler urunler = new Urunler();
             Masalar masalar = new Masalar();
+            Siparisler siparisler = new Siparisler();
 
             // Start application with Masalar selected
             selectedButton = btnMasalar;
@@ -89,12 +90,17 @@ namespace RestoranKontrolSistemi
             selectedButton = btnSiparisler;
             btnSiparisler.BackColor = buttonSelectedColor;
 
-            if (!(bottomPanel.Controls[0] is MasalarUC))
+            if (!(bottomPanel.Controls[0] is SiparislerUC))
             {
                 bottomPanel.Controls.RemoveAt(0);
-                SiparislerUC siparislerUC = new SiparislerUC();
-                siparislerUC.Dock = DockStyle.Fill;
-                bottomPanel.Controls.Add(siparislerUC);
+
+                if (SiparislerUC.Instance != null) {
+                    bottomPanel.Controls.Add(SiparislerUC.Instance);
+                } else {
+                    SiparislerUC siparislerUC = new SiparislerUC();
+                    siparislerUC.Dock = DockStyle.Fill;
+                    bottomPanel.Controls.Add(siparislerUC);
+                }
             }
         }
         

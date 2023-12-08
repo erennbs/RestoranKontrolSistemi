@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
+using RestoranKontrolSistemi.UserControls;
 
 namespace RestoranKontrolSistemi.Class
 {
@@ -31,6 +32,7 @@ namespace RestoranKontrolSistemi.Class
 
         public void SiparisEkle(Siparis siparis) {
             SiparislerList.Add(siparis);
+            Siparisler.Instance.SırayaEkle(siparis);
         }
     }
 }

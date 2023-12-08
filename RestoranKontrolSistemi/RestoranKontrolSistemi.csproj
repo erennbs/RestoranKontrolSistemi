@@ -49,6 +49,7 @@
     <Compile Include="Class\Masa.cs" />
     <Compile Include="Class\Masalar.cs" />
     <Compile Include="Class\Siparis.cs" />
+    <Compile Include="Class\Siparisler.cs" />
     <Compile Include="Class\Urun.cs" />
     <Compile Include="Class\Urunler.cs" />
     <Compile Include="Form1.cs">

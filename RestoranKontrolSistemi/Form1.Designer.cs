@@ -49,7 +49,7 @@
             this.topPanel.Location = new System.Drawing.Point(0, 0);
             this.topPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(1014, 59);
+            this.topPanel.Size = new System.Drawing.Size(1184, 59);
             this.topPanel.TabIndex = 0;
             // 
             // btnSiparisler
@@ -130,18 +130,19 @@
             this.bottomPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bottomPanel.Location = new System.Drawing.Point(0, 59);
             this.bottomPanel.Name = "bottomPanel";
-            this.bottomPanel.Size = new System.Drawing.Size(1014, 466);
+            this.bottomPanel.Size = new System.Drawing.Size(1184, 552);
             this.bottomPanel.TabIndex = 1;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1014, 525);
+            this.ClientSize = new System.Drawing.Size(1184, 611);
             this.Controls.Add(this.bottomPanel);
             this.Controls.Add(this.topPanel);
             this.Font = new System.Drawing.Font("Microsoft JhengHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.MinimumSize = new System.Drawing.Size(1200, 650);
             this.Name = "frmMain";
             this.Text = "Restoran Kontrol";
             this.topPanel.ResumeLayout(false);

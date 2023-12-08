@@ -34,7 +34,8 @@ namespace RestoranKontrolSistemi.UserControls
             }
 
             UrunlerListboxYenile();
-            
+
+            dataGridSiparis.AutoGenerateColumns = false;
             masalarSplitContainer.Panel2Collapsed = true;
 
             MasalariEkle();
@@ -77,7 +78,14 @@ namespace RestoranKontrolSistemi.UserControls
             masalarSplitContainer.Panel2Collapsed = false;
             lblMasa.Text = "Masa " + masa.MasaNumarasi;
 
+            ToplamFiyatYaz();
+
             dataGridSiparis.DataSource = masa.SiparislerList;
+            if (masa.Dolu == false) {
+                btnMasaAcKapa.Text = "Masa Aç";
+            } else {
+                btnMasaAcKapa.Text = "Masa Kapat";
+            }
         }
 
         private void lbUrunler_SelectedIndexChanged(object sender, EventArgs e) {
@@ -95,13 +103,13 @@ namespace RestoranKontrolSistemi.UserControls
             Siparis siparisFound = siparisQuery.FirstOrDefault();
 
             if (siparisFound == null) {
-                masaSelected.SiparisEkle(new Siparis(urunFound, 1));
+                masaSelected.SiparisEkle(new Siparis(urunFound, 1, masaSelected.MasaNumarasi));
             } else {
                 siparisFound.MiktarArttır();
             }
 
+            ToplamFiyatYaz();
             lbUrunler.ClearSelected();
-            DataGridYenile();
 
         }
 
@@ -119,11 +127,21 @@ namespace RestoranKontrolSistemi.UserControls
                 masaButtonSelected.ForeColor = Color.White;
             }
             
-            DataGridYenile();
         }
 
         private void DataGridYenile() {
             dataGridSiparis.ResetBindings();
+        }
+
+        private void ToplamFiyatYaz() {
+            // Secilen masanın siparislerinin toplam fiyatini hesapla.
+            float toplam = 0;
+
+            foreach (Siparis siparis in masaSelected.SiparislerList) {
+                toplam += siparis.NetFiyat;
+            }
+
+            lblToplam.Text = "Toplam: " + toplam.ToString() + " TL";
         }
 
         private void dataGridSiparis_CellValueChanged(object sender, DataGridViewCellEventArgs e) {
@@ -136,6 +154,7 @@ namespace RestoranKontrolSistemi.UserControls
             } else {
                 
             }
+            ToplamFiyatYaz();
 
         }
 
@@ -144,5 +163,20 @@ namespace RestoranKontrolSistemi.UserControls
             MessageBox.Show("Miktar Sayı Olmalıdır!", "Hata");
         }
 
+        private void dataGridSiparis_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e) {
+            if (e.Row.Index < 0) return;
+
+            Siparisler.Instance.SiparisIptalEt(masaSelected.SiparislerList[e.Row.Index]);
+            ToplamFiyatYaz();
+        }
+
+        private void dataGridSiparis_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e) {
+            // Hazır olan siparislerin arka planını yesil yap
+            if (masaSelected.SiparislerList.Count > 0 && masaSelected.SiparislerList[e.RowIndex].Hazir) {
+                e.CellStyle.BackColor = softGreen;
+                e.CellStyle.ForeColor = Color.White;
+                e.CellStyle.SelectionBackColor = softGreen;
+            }
+        }
     }
 }
