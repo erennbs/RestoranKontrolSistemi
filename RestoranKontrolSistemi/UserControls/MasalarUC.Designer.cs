@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.masalarSplitContainer = new System.Windows.Forms.SplitContainer();
             this.flpMasalar = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblToplam = new System.Windows.Forms.Label();
             this.dataGridSiparis = new System.Windows.Forms.DataGridView();
             this.UrunAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Miktar = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,7 +42,6 @@
             this.lbUrunler = new System.Windows.Forms.ListBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.lblMasa = new System.Windows.Forms.Label();
-            this.lblToplam = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.masalarSplitContainer)).BeginInit();
             this.masalarSplitContainer.Panel1.SuspendLayout();
             this.masalarSplitContainer.Panel2.SuspendLayout();
@@ -82,39 +82,51 @@
             this.flpMasalar.Size = new System.Drawing.Size(709, 547);
             this.flpMasalar.TabIndex = 0;
             // 
+            // lblToplam
+            // 
+            this.lblToplam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblToplam.Font = new System.Drawing.Font("Microsoft New Tai Lue", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblToplam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.lblToplam.Location = new System.Drawing.Point(141, 233);
+            this.lblToplam.Name = "lblToplam";
+            this.lblToplam.Size = new System.Drawing.Size(166, 23);
+            this.lblToplam.TabIndex = 17;
+            this.lblToplam.Text = "Toplam: 0 TL";
+            this.lblToplam.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // dataGridSiparis
             // 
             this.dataGridSiparis.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridSiparis.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(111)))), ((int)(((byte)(82)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridSiparis.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(111)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridSiparis.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridSiparis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridSiparis.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.UrunAdi,
             this.Miktar,
             this.Fiyat});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridSiparis.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridSiparis.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridSiparis.Location = new System.Drawing.Point(18, 63);
             this.dataGridSiparis.Name = "dataGridSiparis";
-            dataGridViewCellStyle6.NullValue = null;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dataGridSiparis.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.NullValue = null;
+            this.dataGridSiparis.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridSiparis.Size = new System.Drawing.Size(289, 154);
             this.dataGridSiparis.TabIndex = 16;
+            this.dataGridSiparis.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridSiparis_CellBeginEdit);
             this.dataGridSiparis.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridSiparis_CellFormatting);
             this.dataGridSiparis.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridSiparis_CellValueChanged);
             this.dataGridSiparis.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridSiparis_DataError);
@@ -199,18 +211,6 @@
             this.lblMasa.Size = new System.Drawing.Size(76, 22);
             this.lblMasa.TabIndex = 0;
             this.lblMasa.Text = "Masa 1";
-            // 
-            // lblToplam
-            // 
-            this.lblToplam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblToplam.Font = new System.Drawing.Font("Microsoft New Tai Lue", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblToplam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.lblToplam.Location = new System.Drawing.Point(141, 233);
-            this.lblToplam.Name = "lblToplam";
-            this.lblToplam.Size = new System.Drawing.Size(166, 23);
-            this.lblToplam.TabIndex = 17;
-            this.lblToplam.Text = "Toplam: 0 TL";
-            this.lblToplam.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // MasalarUC
             // 

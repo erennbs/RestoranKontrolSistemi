@@ -102,9 +102,10 @@ namespace RestoranKontrolSistemi.UserControls
 
             Siparis siparisFound = siparisQuery.FirstOrDefault();
 
-            if (siparisFound == null) {
+            if (siparisFound == null || siparisFound.Hazir) {
                 masaSelected.SiparisEkle(new Siparis(urunFound, 1, masaSelected.MasaNumarasi));
-            } else {
+            }
+            else {
                 siparisFound.MiktarArttır();
             }
 
@@ -129,10 +130,6 @@ namespace RestoranKontrolSistemi.UserControls
             
         }
 
-        private void DataGridYenile() {
-            dataGridSiparis.ResetBindings();
-        }
-
         private void ToplamFiyatYaz() {
             // Secilen masanın siparislerinin toplam fiyatini hesapla.
             float toplam = 0;
@@ -149,7 +146,7 @@ namespace RestoranKontrolSistemi.UserControls
 
             if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
 
-            if(int.TryParse(dataGridSiparis.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString(), out value)) {
+            if (int.TryParse(dataGridSiparis.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString(), out value)) {
                 masaSelected.SiparislerList[e.RowIndex].FiyatGuncelle();
             } else {
                 
@@ -166,6 +163,12 @@ namespace RestoranKontrolSistemi.UserControls
         private void dataGridSiparis_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e) {
             if (e.Row.Index < 0) return;
 
+            // Siparis hazir ise silinmesin
+            if (masaSelected.SiparislerList[e.Row.Index].Hazir) {
+                e.Cancel = true;
+                return;
+            }
+
             Siparisler.Instance.SiparisIptalEt(masaSelected.SiparislerList[e.Row.Index]);
             ToplamFiyatYaz();
         }
@@ -176,6 +179,14 @@ namespace RestoranKontrolSistemi.UserControls
                 e.CellStyle.BackColor = softGreen;
                 e.CellStyle.ForeColor = Color.White;
                 e.CellStyle.SelectionBackColor = softGreen;
+            }
+        }
+
+        private void dataGridSiparis_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e) {
+            // Siparis hazirsa miktar değişmesin
+            if (masaSelected.SiparislerList[e.RowIndex].Hazir) {
+                e.Cancel = true;
+                return;
             }
         }
     }
