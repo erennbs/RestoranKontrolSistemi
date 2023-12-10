@@ -55,6 +55,28 @@ namespace RestoranKontrolSistemi.UserControls
             }
         }
 
+        public void YeniMasaEkle() {
+            Masalar.Instance.MasaEkle();
+
+            Button newButton = new Button();
+            newButton.Text = "Masa " + (Masalar.Instance.MasalarList.Count).ToString();
+            newButton.Size = new Size(140, 97);
+            newButton.Font = new Font("Microsoft New Tai Lue", 10);
+            newButton.Click += button_Click;
+
+            flpMasalar.Controls.Add(newButton);
+
+            ProgressBarGuncelle();
+        }
+
+        public void MasaSil() {
+            Masalar.Instance.MasaSil();
+
+            flpMasalar.Controls.RemoveAt(flpMasalar.Controls.Count - 1);
+
+            ProgressBarGuncelle();
+        }
+
         public void UrunlerListboxYenile() {
             lbUrunler.Items.Clear();
             

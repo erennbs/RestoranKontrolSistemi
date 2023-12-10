@@ -30,12 +30,12 @@ namespace RestoranKontrolSistemi.Class {
 
         }
 
-        public void MasaEkle(Masa masa) {
-            masalarList.Add(masa);
+        public void MasaEkle() {
+            MasalarList.Add(new Masa(MasalarList.Count + 1));
         }
 
-        public void MasaSil(Masa masa) {
-            masalarList.Remove(masa);
+        public void MasaSil() {
+            masalarList.RemoveAt(masalarList.Count - 1);
         }
     }
 }

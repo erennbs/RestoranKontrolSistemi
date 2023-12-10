@@ -112,5 +112,13 @@ namespace RestoranKontrolSistemi
         public void SetProgressBar(int value) {
             progresBar.Value = value;
         }
+
+        private void tsmMasaEkle_Click(object sender, EventArgs e) {
+            MasalarUC.Instance.YeniMasaEkle();
+        }
+
+        private void tsmMasaCikar_Click(object sender, EventArgs e) {
+            MasalarUC.Instance.MasaSil();
+        }
     }
 }

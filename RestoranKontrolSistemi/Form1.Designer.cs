@@ -40,6 +40,9 @@
             this.tssSaat = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.progresBar = new System.Windows.Forms.ToolStripProgressBar();
+            this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
+            this.tsmMasaCikar = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmMasaEkle = new System.Windows.Forms.ToolStripMenuItem();
             this.topPanel.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -143,7 +146,8 @@
             this.statusStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(111)))), ((int)(((byte)(82)))));
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tssSaat,
-            this.progresBar});
+            this.progresBar,
+            this.toolStripSplitButton1});
             this.statusStrip.Location = new System.Drawing.Point(0, 589);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -156,7 +160,8 @@
             this.tssSaat.ForeColor = System.Drawing.Color.White;
             this.tssSaat.Margin = new System.Windows.Forms.Padding(0, 3, 5, 2);
             this.tssSaat.Name = "tssSaat";
-            this.tssSaat.Size = new System.Drawing.Size(0, 17);
+            this.tssSaat.Size = new System.Drawing.Size(11, 17);
+            this.tssSaat.Text = " ";
             // 
             // timer
             // 
@@ -170,14 +175,41 @@
             this.progresBar.Name = "progresBar";
             this.progresBar.Size = new System.Drawing.Size(100, 16);
             // 
+            // toolStripSplitButton1
+            // 
+            this.toolStripSplitButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripSplitButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmMasaEkle,
+            this.tsmMasaCikar});
+            this.toolStripSplitButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSplitButton1.Image")));
+            this.toolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripSplitButton1.Margin = new System.Windows.Forms.Padding(10, 2, 0, 0);
+            this.toolStripSplitButton1.Name = "toolStripSplitButton1";
+            this.toolStripSplitButton1.Size = new System.Drawing.Size(32, 20);
+            this.toolStripSplitButton1.Text = "toolStripSplitButton1";
+            // 
+            // tsmMasaCikar
+            // 
+            this.tsmMasaCikar.Name = "tsmMasaCikar";
+            this.tsmMasaCikar.Size = new System.Drawing.Size(180, 22);
+            this.tsmMasaCikar.Text = "Masa Çıkar";
+            this.tsmMasaCikar.Click += new System.EventHandler(this.tsmMasaCikar_Click);
+            // 
+            // tsmMasaEkle
+            // 
+            this.tsmMasaEkle.Name = "tsmMasaEkle";
+            this.tsmMasaEkle.Size = new System.Drawing.Size(180, 22);
+            this.tsmMasaEkle.Text = "Masa Ekle";
+            this.tsmMasaEkle.Click += new System.EventHandler(this.tsmMasaEkle_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 611);
             this.Controls.Add(this.bottomPanel);
-            this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.topPanel);
+            this.Controls.Add(this.statusStrip);
             this.Font = new System.Drawing.Font("Microsoft JhengHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -204,6 +236,9 @@
         private System.Windows.Forms.ToolStripStatusLabel tssSaat;
         private System.Windows.Forms.Timer timer;
         public System.Windows.Forms.ToolStripProgressBar progresBar;
+        private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton1;
+        private System.Windows.Forms.ToolStripMenuItem tsmMasaEkle;
+        private System.Windows.Forms.ToolStripMenuItem tsmMasaCikar;
     }
 }
 
