@@ -118,22 +118,25 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="book-svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\book-svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="table-svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\table-svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="trash-svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\trash-svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="noImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\noImage.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="no_image_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\no_image_1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="table-svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\table-svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="book-svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\book-svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="add-svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\add-svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="trash-svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\trash-svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="no_image_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\no_image_1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="settings-svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\settings-svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
