@@ -36,6 +36,7 @@ namespace RestoranKontrolSistemi
             masalarUC.Dock = DockStyle.Fill;
             bottomPanel.Controls.Add(masalarUC);
 
+            tssSaat.Text = DateTime.Now.ToString("t");
             
         }
 
@@ -103,6 +104,13 @@ namespace RestoranKontrolSistemi
                 }
             }
         }
-        
+
+        private void timer_Tick(object sender, EventArgs e) {
+            tssSaat.Text = DateTime.Now.ToString("t");
+        }
+
+        public void SetProgressBar(int value) {
+            progresBar.Value = value;
+        }
     }
 }

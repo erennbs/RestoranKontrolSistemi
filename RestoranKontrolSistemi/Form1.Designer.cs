@@ -36,7 +36,12 @@
             this.btnMenu = new System.Windows.Forms.Button();
             this.btnMasalar = new System.Windows.Forms.Button();
             this.bottomPanel = new System.Windows.Forms.Panel();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.tssSaat = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.progresBar = new System.Windows.Forms.ToolStripProgressBar();
             this.topPanel.SuspendLayout();
+            this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // topPanel
@@ -130,8 +135,40 @@
             this.bottomPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bottomPanel.Location = new System.Drawing.Point(0, 59);
             this.bottomPanel.Name = "bottomPanel";
-            this.bottomPanel.Size = new System.Drawing.Size(1184, 552);
+            this.bottomPanel.Size = new System.Drawing.Size(1184, 530);
             this.bottomPanel.TabIndex = 1;
+            // 
+            // statusStrip
+            // 
+            this.statusStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(111)))), ((int)(((byte)(82)))));
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tssSaat,
+            this.progresBar});
+            this.statusStrip.Location = new System.Drawing.Point(0, 589);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.statusStrip.Size = new System.Drawing.Size(1184, 22);
+            this.statusStrip.TabIndex = 2;
+            // 
+            // tssSaat
+            // 
+            this.tssSaat.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tssSaat.ForeColor = System.Drawing.Color.White;
+            this.tssSaat.Margin = new System.Windows.Forms.Padding(0, 3, 5, 2);
+            this.tssSaat.Name = "tssSaat";
+            this.tssSaat.Size = new System.Drawing.Size(0, 17);
+            // 
+            // timer
+            // 
+            this.timer.Enabled = true;
+            this.timer.Interval = 1000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // progresBar
+            // 
+            this.progresBar.Margin = new System.Windows.Forms.Padding(20, 3, 1, 3);
+            this.progresBar.Name = "progresBar";
+            this.progresBar.Size = new System.Drawing.Size(100, 16);
             // 
             // frmMain
             // 
@@ -139,14 +176,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 611);
             this.Controls.Add(this.bottomPanel);
+            this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.topPanel);
             this.Font = new System.Drawing.Font("Microsoft JhengHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MinimumSize = new System.Drawing.Size(1200, 650);
             this.Name = "frmMain";
             this.Text = "Restoran Kontrol";
             this.topPanel.ResumeLayout(false);
+            this.statusStrip.ResumeLayout(false);
+            this.statusStrip.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -158,6 +200,10 @@
         private System.Windows.Forms.ImageList imageListIcons;
         private System.Windows.Forms.Panel bottomPanel;
         private System.Windows.Forms.Button btnSiparisler;
+        private System.Windows.Forms.StatusStrip statusStrip;
+        private System.Windows.Forms.ToolStripStatusLabel tssSaat;
+        private System.Windows.Forms.Timer timer;
+        public System.Windows.Forms.ToolStripProgressBar progresBar;
     }
 }
 

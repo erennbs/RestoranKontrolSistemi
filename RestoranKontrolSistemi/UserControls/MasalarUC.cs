@@ -127,7 +127,14 @@ namespace RestoranKontrolSistemi.UserControls
                 masaButtonSelected.BackColor = softRed;
                 masaButtonSelected.ForeColor = Color.White;
             }
-            
+
+            ProgressBarGuncelle();
+        }
+
+        private void ProgressBarGuncelle() {
+            float val = (float)Masalar.Instance.MasalarList.Where(masa => masa.Dolu).Count() / Masalar.Instance.MasalarList.Count * 100;
+            Console.WriteLine((Masalar.Instance.MasalarList.Where(masa => masa.Dolu).Count() / Masalar.Instance.MasalarList.Count));
+            ((frmMain)Application.OpenForms[0]).SetProgressBar((int)val);
         }
 
         private void ToplamFiyatYaz() {

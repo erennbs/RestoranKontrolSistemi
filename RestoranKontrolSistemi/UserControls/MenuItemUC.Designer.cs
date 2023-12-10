@@ -102,6 +102,8 @@
             this.pictureYemek.BackColor = System.Drawing.SystemColors.Control;
             this.pictureYemek.Image = global::RestoranKontrolSistemi.Properties.Resources.no_image_1;
             this.pictureYemek.Location = new System.Drawing.Point(15, 15);
+            this.pictureYemek.MaximumSize = new System.Drawing.Size(120, 120);
+            this.pictureYemek.MinimumSize = new System.Drawing.Size(120, 120);
             this.pictureYemek.Name = "pictureYemek";
             this.pictureYemek.Size = new System.Drawing.Size(120, 120);
             this.pictureYemek.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -110,7 +112,7 @@
             // 
             // MenuItemUC
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.labelFiyat);
