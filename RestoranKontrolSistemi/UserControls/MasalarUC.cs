@@ -70,6 +70,12 @@ namespace RestoranKontrolSistemi.UserControls
         }
 
         public void MasaSil() {
+            if (Masalar.Instance.MasalarList.Count == 0) return;
+
+            if (masaSelected == Masalar.Instance.GetLastElement()) {
+                masalarSplitContainer.Panel2Collapsed = true;
+            }
+
             Masalar.Instance.MasaSil();
 
             flpMasalar.Controls.RemoveAt(flpMasalar.Controls.Count - 1);
@@ -154,8 +160,14 @@ namespace RestoranKontrolSistemi.UserControls
         }
 
         private void ProgressBarGuncelle() {
-            float val = (float)Masalar.Instance.MasalarList.Where(masa => masa.Dolu).Count() / Masalar.Instance.MasalarList.Count * 100;
-            Console.WriteLine((Masalar.Instance.MasalarList.Where(masa => masa.Dolu).Count() / Masalar.Instance.MasalarList.Count));
+            float val;
+            if (Masalar.Instance.MasalarList.Count == 0) {
+                val = 0;
+            } else {
+                val = (float)Masalar.Instance.MasalarList.Where(masa => masa.Dolu).Count() / Masalar.Instance.MasalarList.Count * 100;
+                Console.WriteLine((Masalar.Instance.MasalarList.Where(masa => masa.Dolu).Count() / Masalar.Instance.MasalarList.Count));
+            }
+
             ((frmMain)Application.OpenForms[0]).SetProgressBar((int)val);
         }
 

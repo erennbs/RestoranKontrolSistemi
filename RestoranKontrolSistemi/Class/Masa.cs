@@ -26,6 +26,9 @@ namespace RestoranKontrolSistemi.Class
         }
 
         public void MasaKapat() {
+            foreach (Siparis siparis in SiparislerList) {
+                Siparisler.Instance.SiparisIptalEt(siparis);
+            }
             SiparislerList.Clear();
             Dolu = false;
         }

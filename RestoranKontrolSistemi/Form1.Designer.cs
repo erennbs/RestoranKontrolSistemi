@@ -35,7 +35,7 @@
             this.bottomPanel = new System.Windows.Forms.Panel();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.tssSaat = new System.Windows.Forms.ToolStripStatusLabel();
-            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.timerSaniye = new System.Windows.Forms.Timer(this.components);
             this.progresBar = new System.Windows.Forms.ToolStripProgressBar();
             this.btnSiparisler = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.Button();
@@ -43,6 +43,7 @@
             this.tssbAyarlar = new System.Windows.Forms.ToolStripSplitButton();
             this.tsmMasaEkle = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmMasaCikar = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.topPanel.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -76,7 +77,7 @@
             this.bottomPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bottomPanel.Location = new System.Drawing.Point(0, 59);
             this.bottomPanel.Name = "bottomPanel";
-            this.bottomPanel.Size = new System.Drawing.Size(1184, 530);
+            this.bottomPanel.Size = new System.Drawing.Size(1184, 580);
             this.bottomPanel.TabIndex = 1;
             // 
             // statusStrip
@@ -85,8 +86,9 @@
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tssSaat,
             this.tssbAyarlar,
-            this.progresBar});
-            this.statusStrip.Location = new System.Drawing.Point(0, 589);
+            this.progresBar,
+            this.toolStripStatusLabel1});
+            this.statusStrip.Location = new System.Drawing.Point(0, 639);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.statusStrip.Size = new System.Drawing.Size(1184, 22);
@@ -101,11 +103,11 @@
             this.tssSaat.Size = new System.Drawing.Size(12, 17);
             this.tssSaat.Text = " ";
             // 
-            // timer
+            // timerSaniye
             // 
-            this.timer.Enabled = true;
-            this.timer.Interval = 1000;
-            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            this.timerSaniye.Enabled = true;
+            this.timerSaniye.Interval = 1000;
+            this.timerSaniye.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // progresBar
             // 
@@ -204,18 +206,27 @@
             this.tsmMasaCikar.Text = "Masa Çıkar";
             this.tsmMasaCikar.Click += new System.EventHandler(this.tsmMasaCikar_Click);
             // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel1.ForeColor = System.Drawing.Color.White;
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(54, 17);
+            this.toolStripStatusLabel1.Text = "Doluluk:";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 611);
+            this.ClientSize = new System.Drawing.Size(1184, 661);
             this.Controls.Add(this.bottomPanel);
             this.Controls.Add(this.topPanel);
             this.Controls.Add(this.statusStrip);
             this.Font = new System.Drawing.Font("Microsoft JhengHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.MinimumSize = new System.Drawing.Size(1200, 650);
+            this.MinimumSize = new System.Drawing.Size(1200, 700);
             this.Name = "frmMain";
             this.Text = "Restoran Kontrol";
             this.topPanel.ResumeLayout(false);
@@ -236,11 +247,12 @@
         private System.Windows.Forms.Button btnSiparisler;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel tssSaat;
-        private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Timer timerSaniye;
         public System.Windows.Forms.ToolStripProgressBar progresBar;
         private System.Windows.Forms.ToolStripSplitButton tssbAyarlar;
         private System.Windows.Forms.ToolStripMenuItem tsmMasaEkle;
         private System.Windows.Forms.ToolStripMenuItem tsmMasaCikar;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
 
