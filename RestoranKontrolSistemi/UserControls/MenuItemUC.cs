@@ -39,5 +39,10 @@ namespace RestoranKontrolSistemi.UserControls
             Urunler.Instance.UrunSil(this.urun);
             this.Parent.Controls.Remove(this);
         }
+
+
+
+        
+
     }
 }

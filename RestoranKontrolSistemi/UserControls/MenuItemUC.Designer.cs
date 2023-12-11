@@ -36,9 +36,8 @@
             this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiSil = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureYemek = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureYemek)).BeginInit();
             this.SuspendLayout();
             // 
             // labelYemekAdi
@@ -79,8 +78,10 @@
             // 
             this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
             this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.ımageList1.Images.SetKeyName(0, "noImage.jpg");
-            this.ımageList1.Images.SetKeyName(1, "soup.png");
+            this.ımageList1.Images.SetKeyName(0, "soup.png");
+            this.ımageList1.Images.SetKeyName(1, "indir.jpeg");
+            this.ımageList1.Images.SetKeyName(2, "pilav-1.jpg");
+            this.ımageList1.Images.SetKeyName(3, "ayrnaa2dfc7601.jpg");
             // 
             // contextMenuStrip1
             // 
@@ -97,46 +98,44 @@
             this.tsmiSil.Text = "Sil";
             this.tsmiSil.Click += new System.EventHandler(this.tsmiSil_Click);
             // 
-            // pictureYemek
+            // button1
             // 
-            this.pictureYemek.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureYemek.Image = global::RestoranKontrolSistemi.Properties.Resources.no_image_1;
-            this.pictureYemek.Location = new System.Drawing.Point(15, 15);
-            this.pictureYemek.Name = "pictureYemek";
-            this.pictureYemek.Size = new System.Drawing.Size(120, 120);
-            this.pictureYemek.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureYemek.TabIndex = 0;
-            this.pictureYemek.TabStop = false;
+            this.button1.ImageIndex = 0;
+            this.button1.ImageList = this.ımageList1;
+            this.button1.Location = new System.Drawing.Point(13, 15);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(123, 120);
+            this.button1.TabIndex = 5;
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // MenuItemUC
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.White;
             this.ContextMenuStrip = this.contextMenuStrip1;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.labelFiyat);
             this.Controls.Add(this.labelAciklama);
             this.Controls.Add(this.labelYemekAdi);
-            this.Controls.Add(this.pictureYemek);
             this.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.MaximumSize = new System.Drawing.Size(500, 150);
             this.MinimumSize = new System.Drawing.Size(500, 150);
             this.Name = "MenuItemUC";
             this.Size = new System.Drawing.Size(500, 150);
             this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureYemek)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureYemek;
         private System.Windows.Forms.Label labelYemekAdi;
         private System.Windows.Forms.Label labelAciklama;
         private System.Windows.Forms.Label labelFiyat;
         private System.Windows.Forms.ImageList ımageList1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tsmiSil;
+        private System.Windows.Forms.Button button1;
     }
 }
