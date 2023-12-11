@@ -73,6 +73,7 @@ namespace RestoranKontrolSistemi.UserControls {
 
             MenuItemUC newMenuItem = new MenuItemUC();
             newMenuItem.UrunuYaz(yeniUrun, ofdResim.FileName);
+            newMenuItem.Width = 582;
 
             menuPanel.Controls.Add(newMenuItem);
 

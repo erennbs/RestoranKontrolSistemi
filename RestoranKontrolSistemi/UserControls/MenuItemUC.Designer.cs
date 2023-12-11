@@ -120,7 +120,6 @@
             this.Controls.Add(this.labelYemekAdi);
             this.Controls.Add(this.pictureYemek);
             this.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.MaximumSize = new System.Drawing.Size(500, 150);
             this.MinimumSize = new System.Drawing.Size(500, 150);
             this.Name = "MenuItemUC";
             this.Size = new System.Drawing.Size(500, 150);
