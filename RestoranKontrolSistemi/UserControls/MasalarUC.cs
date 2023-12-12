@@ -168,7 +168,7 @@ namespace RestoranKontrolSistemi.UserControls
                 Console.WriteLine((Masalar.Instance.MasalarList.Where(masa => masa.Dolu).Count() / Masalar.Instance.MasalarList.Count));
             }
 
-            ((frmMain)Application.OpenForms[0]).SetProgressBar((int)val);
+            ((frmMain)Application.OpenForms[Application.OpenForms.Count - 1]).SetProgressBar((int)val);
         }
 
         private void ToplamFiyatYaz() {

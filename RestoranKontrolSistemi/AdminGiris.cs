@@ -39,7 +39,7 @@ namespace RestoranKontrolSistemi
         {
             if (GirisBasarili())
             {
-                this.Close();
+                this.Hide();
 
                 frmMain form1 = Application.OpenForms.OfType<frmMain>().FirstOrDefault();
 
