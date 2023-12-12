@@ -19,10 +19,10 @@ namespace RestoranKontrolSistemi
         private bool MasaGirisi()
         {
             string dogruMasa = "1";
-            
+
 
             string girilenMasa = txtboxMasaNum.Text;
-            
+
 
             if (girilenMasa == dogruMasa)
             {
@@ -37,28 +37,20 @@ namespace RestoranKontrolSistemi
         private void linkLabelAdmin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
-            if (MasaGirisi())
+
+            this.Hide(); 
+
+            AdminGiris adminForm = Application.OpenForms.OfType<AdminGiris>().FirstOrDefault();
+
+            if (adminForm != null)
             {
-                this.Close();
-
-                AdminGiris adminForm = Application.OpenForms.OfType<AdminGiris>().FirstOrDefault();
-
-                if (adminForm != null)
-                {
-                    adminForm.BringToFront();
-                }
-                else
-                {
-                    adminForm = new AdminGiris();
-                    adminForm.Show();
-                }
+                adminForm.BringToFront();
             }
             else
             {
-                MessageBox.Show("Giriş başarısız. Lütfen bilgilerinizi kontrol edin.");
+                adminForm = new AdminGiris();
+                adminForm.Show();
             }
-
-            
         }
     }
 }
