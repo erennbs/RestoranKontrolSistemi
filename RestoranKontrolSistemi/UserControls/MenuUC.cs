@@ -29,7 +29,7 @@ namespace RestoranKontrolSistemi.UserControls {
 
             foreach (Urun urun in Urunler.Instance.UrunlerList) {
                 MenuItemUC item = new MenuItemUC();
-                item.UrunuYaz(urun, null);
+                item.UrunuYaz(urun);
                 menuPanel.Controls.Add(item);
             }
         }
@@ -70,17 +70,12 @@ namespace RestoranKontrolSistemi.UserControls {
 
             Urun yeniUrun = new Urun(ad, aciklama, fiyat, kategori);
             Urunler.Instance.UrunEkle(yeniUrun);
-            
+
             MenuItemUC newMenuItem = new MenuItemUC();
             newMenuItem.UrunuYaz(yeniUrun, ofdResim.FileName);
-            Console.WriteLine(newMenuItem.Size);
-            Console.WriteLine(menuPanel.Size);
+            newMenuItem.Width = 582;
 
             menuPanel.Controls.Add(newMenuItem);
-            menuPanel.Width = 510;
-            Console.WriteLine(newMenuItem.Size);
-            Console.WriteLine(menuPanel.Size);
-
 
             TextBoxTemizle();
         }

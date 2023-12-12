@@ -55,6 +55,34 @@ namespace RestoranKontrolSistemi.UserControls
             }
         }
 
+        public void YeniMasaEkle() {
+            Masalar.Instance.MasaEkle();
+
+            Button newButton = new Button();
+            newButton.Text = "Masa " + (Masalar.Instance.MasalarList.Count).ToString();
+            newButton.Size = new Size(140, 97);
+            newButton.Font = new Font("Microsoft New Tai Lue", 10);
+            newButton.Click += button_Click;
+
+            flpMasalar.Controls.Add(newButton);
+
+            ProgressBarGuncelle();
+        }
+
+        public void MasaSil() {
+            if (Masalar.Instance.MasalarList.Count == 0) return;
+
+            if (masaSelected == Masalar.Instance.GetLastElement()) {
+                masalarSplitContainer.Panel2Collapsed = true;
+            }
+
+            Masalar.Instance.MasaSil();
+
+            flpMasalar.Controls.RemoveAt(flpMasalar.Controls.Count - 1);
+
+            ProgressBarGuncelle();
+        }
+
         public void UrunlerListboxYenile() {
             lbUrunler.Items.Clear();
             
@@ -127,7 +155,20 @@ namespace RestoranKontrolSistemi.UserControls
                 masaButtonSelected.BackColor = softRed;
                 masaButtonSelected.ForeColor = Color.White;
             }
-            
+
+            ProgressBarGuncelle();
+        }
+
+        private void ProgressBarGuncelle() {
+            float val;
+            if (Masalar.Instance.MasalarList.Count == 0) {
+                val = 0;
+            } else {
+                val = (float)Masalar.Instance.MasalarList.Where(masa => masa.Dolu).Count() / Masalar.Instance.MasalarList.Count * 100;
+                Console.WriteLine((Masalar.Instance.MasalarList.Where(masa => masa.Dolu).Count() / Masalar.Instance.MasalarList.Count));
+            }
+
+            ((frmMain)Application.OpenForms[0]).SetProgressBar((int)val);
         }
 
         private void ToplamFiyatYaz() {

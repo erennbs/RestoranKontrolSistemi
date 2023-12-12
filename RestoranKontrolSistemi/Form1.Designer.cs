@@ -31,12 +31,21 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.topPanel = new System.Windows.Forms.Panel();
-            this.btnSiparisler = new System.Windows.Forms.Button();
             this.imageListIcons = new System.Windows.Forms.ImageList(this.components);
+            this.bottomPanel = new System.Windows.Forms.Panel();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.tssSaat = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timerSaniye = new System.Windows.Forms.Timer(this.components);
+            this.progresBar = new System.Windows.Forms.ToolStripProgressBar();
+            this.btnSiparisler = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.Button();
             this.btnMasalar = new System.Windows.Forms.Button();
-            this.bottomPanel = new System.Windows.Forms.Panel();
+            this.tssbAyarlar = new System.Windows.Forms.ToolStripSplitButton();
+            this.tsmMasaEkle = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmMasaCikar = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.topPanel.SuspendLayout();
+            this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // topPanel
@@ -51,6 +60,60 @@
             this.topPanel.Name = "topPanel";
             this.topPanel.Size = new System.Drawing.Size(1184, 59);
             this.topPanel.TabIndex = 0;
+            // 
+            // imageListIcons
+            // 
+            this.imageListIcons.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListIcons.ImageStream")));
+            this.imageListIcons.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageListIcons.Images.SetKeyName(0, "table-svg.png");
+            this.imageListIcons.Images.SetKeyName(1, "book-svg.png");
+            this.imageListIcons.Images.SetKeyName(2, "card-svg.png");
+            this.imageListIcons.Images.SetKeyName(3, "card-svg2.png");
+            this.imageListIcons.Images.SetKeyName(4, "settings-svg.png");
+            // 
+            // bottomPanel
+            // 
+            this.bottomPanel.BackColor = System.Drawing.Color.White;
+            this.bottomPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bottomPanel.Location = new System.Drawing.Point(0, 59);
+            this.bottomPanel.Name = "bottomPanel";
+            this.bottomPanel.Size = new System.Drawing.Size(1184, 580);
+            this.bottomPanel.TabIndex = 1;
+            // 
+            // statusStrip
+            // 
+            this.statusStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(111)))), ((int)(((byte)(82)))));
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tssSaat,
+            this.tssbAyarlar,
+            this.progresBar,
+            this.toolStripStatusLabel1});
+            this.statusStrip.Location = new System.Drawing.Point(0, 639);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.statusStrip.Size = new System.Drawing.Size(1184, 22);
+            this.statusStrip.TabIndex = 2;
+            // 
+            // tssSaat
+            // 
+            this.tssSaat.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tssSaat.ForeColor = System.Drawing.Color.White;
+            this.tssSaat.Margin = new System.Windows.Forms.Padding(5, 3, 5, 2);
+            this.tssSaat.Name = "tssSaat";
+            this.tssSaat.Size = new System.Drawing.Size(12, 17);
+            this.tssSaat.Text = " ";
+            // 
+            // timerSaniye
+            // 
+            this.timerSaniye.Enabled = true;
+            this.timerSaniye.Interval = 1000;
+            this.timerSaniye.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // progresBar
+            // 
+            this.progresBar.Margin = new System.Windows.Forms.Padding(20, 3, 1, 3);
+            this.progresBar.Name = "progresBar";
+            this.progresBar.Size = new System.Drawing.Size(100, 16);
             // 
             // btnSiparisler
             // 
@@ -72,15 +135,6 @@
             this.btnSiparisler.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSiparisler.UseVisualStyleBackColor = true;
             this.btnSiparisler.Click += new System.EventHandler(this.btnSiparisler_Click);
-            // 
-            // imageListIcons
-            // 
-            this.imageListIcons.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListIcons.ImageStream")));
-            this.imageListIcons.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListIcons.Images.SetKeyName(0, "table-svg.png");
-            this.imageListIcons.Images.SetKeyName(1, "book-svg.png");
-            this.imageListIcons.Images.SetKeyName(2, "card-svg.png");
-            this.imageListIcons.Images.SetKeyName(3, "card-svg2.png");
             // 
             // btnMenu
             // 
@@ -124,29 +178,62 @@
             this.btnMasalar.UseVisualStyleBackColor = true;
             this.btnMasalar.Click += new System.EventHandler(this.btnMasalar_Click);
             // 
-            // bottomPanel
+            // tssbAyarlar
             // 
-            this.bottomPanel.BackColor = System.Drawing.Color.White;
-            this.bottomPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bottomPanel.Location = new System.Drawing.Point(0, 59);
-            this.bottomPanel.Name = "bottomPanel";
-            this.bottomPanel.Size = new System.Drawing.Size(1184, 552);
-            this.bottomPanel.TabIndex = 1;
+            this.tssbAyarlar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tssbAyarlar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmMasaEkle,
+            this.tsmMasaCikar});
+            this.tssbAyarlar.Image = global::RestoranKontrolSistemi.Properties.Resources.settings_svg;
+            this.tssbAyarlar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tssbAyarlar.Margin = new System.Windows.Forms.Padding(10, 2, 0, 0);
+            this.tssbAyarlar.Name = "tssbAyarlar";
+            this.tssbAyarlar.Size = new System.Drawing.Size(32, 20);
+            this.tssbAyarlar.Text = "toolStripSplitButton1";
+            this.tssbAyarlar.ToolTipText = "Ayarlar";
+            // 
+            // tsmMasaEkle
+            // 
+            this.tsmMasaEkle.Name = "tsmMasaEkle";
+            this.tsmMasaEkle.Size = new System.Drawing.Size(180, 22);
+            this.tsmMasaEkle.Text = "Masa Ekle";
+            this.tsmMasaEkle.Click += new System.EventHandler(this.tsmMasaEkle_Click);
+            // 
+            // tsmMasaCikar
+            // 
+            this.tsmMasaCikar.Name = "tsmMasaCikar";
+            this.tsmMasaCikar.Size = new System.Drawing.Size(180, 22);
+            this.tsmMasaCikar.Text = "Masa Çıkar";
+            this.tsmMasaCikar.Click += new System.EventHandler(this.tsmMasaCikar_Click);
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel1.ForeColor = System.Drawing.Color.White;
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(54, 17);
+            this.toolStripStatusLabel1.Text = "Doluluk:";
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 611);
+            this.ClientSize = new System.Drawing.Size(1184, 661);
             this.Controls.Add(this.bottomPanel);
             this.Controls.Add(this.topPanel);
+            this.Controls.Add(this.statusStrip);
             this.Font = new System.Drawing.Font("Microsoft JhengHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.MinimumSize = new System.Drawing.Size(1200, 650);
+            this.MinimumSize = new System.Drawing.Size(1200, 700);
             this.Name = "frmMain";
             this.Text = "Restoran Kontrol";
             this.topPanel.ResumeLayout(false);
+            this.statusStrip.ResumeLayout(false);
+            this.statusStrip.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -158,6 +245,14 @@
         private System.Windows.Forms.ImageList imageListIcons;
         private System.Windows.Forms.Panel bottomPanel;
         private System.Windows.Forms.Button btnSiparisler;
+        private System.Windows.Forms.StatusStrip statusStrip;
+        private System.Windows.Forms.ToolStripStatusLabel tssSaat;
+        private System.Windows.Forms.Timer timerSaniye;
+        public System.Windows.Forms.ToolStripProgressBar progresBar;
+        private System.Windows.Forms.ToolStripSplitButton tssbAyarlar;
+        private System.Windows.Forms.ToolStripMenuItem tsmMasaEkle;
+        private System.Windows.Forms.ToolStripMenuItem tsmMasaCikar;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
 

@@ -100,18 +100,20 @@
             // 
             // button1
             // 
-            this.button1.ImageIndex = 0;
-            this.button1.ImageList = this.ımageList1;
-            this.button1.Location = new System.Drawing.Point(13, 15);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 120);
-            this.button1.TabIndex = 5;
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
+            this.pictureYemek.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureYemek.Image = global::RestoranKontrolSistemi.Properties.Resources.no_image_1;
+            this.pictureYemek.Location = new System.Drawing.Point(15, 15);
+            this.pictureYemek.MaximumSize = new System.Drawing.Size(120, 120);
+            this.pictureYemek.MinimumSize = new System.Drawing.Size(120, 120);
+            this.pictureYemek.Name = "pictureYemek";
+            this.pictureYemek.Size = new System.Drawing.Size(120, 120);
+            this.pictureYemek.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureYemek.TabIndex = 0;
+            this.pictureYemek.TabStop = false;
             // 
             // MenuItemUC
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.button1);
@@ -119,7 +121,6 @@
             this.Controls.Add(this.labelAciklama);
             this.Controls.Add(this.labelYemekAdi);
             this.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.MaximumSize = new System.Drawing.Size(500, 150);
             this.MinimumSize = new System.Drawing.Size(500, 150);
             this.Name = "MenuItemUC";
             this.Size = new System.Drawing.Size(500, 150);

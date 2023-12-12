@@ -20,7 +20,7 @@ namespace RestoranKontrolSistemi.UserControls
             InitializeComponent();
         }
 
-        public void UrunuYaz(Urun urun, string imagePath) {
+        public void UrunuYaz(Urun urun, string imagePath = "") {
             this.urun = urun;
             this.Controls.Find("labelYemekAdi", false)[0].Text = urun.UrunAdi;
             this.Controls.Find("labelAciklama", false)[0].Text = urun.UrunAciklama;

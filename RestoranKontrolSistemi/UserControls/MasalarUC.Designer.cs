@@ -32,7 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.masalarSplitContainer = new System.Windows.Forms.SplitContainer();
-            this.flpMasalar = new System.Windows.Forms.FlowLayoutPanel();
             this.lblToplam = new System.Windows.Forms.Label();
             this.dataGridSiparis = new System.Windows.Forms.DataGridView();
             this.UrunAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +41,7 @@
             this.lbUrunler = new System.Windows.Forms.ListBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.lblMasa = new System.Windows.Forms.Label();
+            this.flpMasalar = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.masalarSplitContainer)).BeginInit();
             this.masalarSplitContainer.Panel1.SuspendLayout();
             this.masalarSplitContainer.Panel2.SuspendLayout();
@@ -73,15 +73,6 @@
             this.masalarSplitContainer.SplitterDistance = 709;
             this.masalarSplitContainer.TabIndex = 0;
             // 
-            // flpMasalar
-            // 
-            this.flpMasalar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpMasalar.Location = new System.Drawing.Point(0, 0);
-            this.flpMasalar.Name = "flpMasalar";
-            this.flpMasalar.Padding = new System.Windows.Forms.Padding(30);
-            this.flpMasalar.Size = new System.Drawing.Size(709, 547);
-            this.flpMasalar.TabIndex = 0;
-            // 
             // lblToplam
             // 
             this.lblToplam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -98,6 +89,7 @@
             // 
             this.dataGridSiparis.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridSiparis.BackgroundColor = System.Drawing.Color.LightGray;
             this.dataGridSiparis.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -175,7 +167,7 @@
             // 
             // lbUrunler
             // 
-            this.lbUrunler.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lbUrunler.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbUrunler.Font = new System.Drawing.Font("Microsoft New Tai Lue", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lbUrunler.FormattingEnabled = true;
@@ -212,6 +204,15 @@
             this.lblMasa.TabIndex = 0;
             this.lblMasa.Text = "Masa 1";
             // 
+            // flpMasalar
+            // 
+            this.flpMasalar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpMasalar.Location = new System.Drawing.Point(0, 0);
+            this.flpMasalar.Name = "flpMasalar";
+            this.flpMasalar.Padding = new System.Windows.Forms.Padding(30);
+            this.flpMasalar.Size = new System.Drawing.Size(709, 547);
+            this.flpMasalar.TabIndex = 1;
+            // 
             // MasalarUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -233,7 +234,6 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer masalarSplitContainer;
-        private System.Windows.Forms.FlowLayoutPanel flpMasalar;
         private System.Windows.Forms.Label lblMasa;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.ListBox lbUrunler;
@@ -243,5 +243,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Miktar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fiyat;
         private System.Windows.Forms.Label lblToplam;
+        private System.Windows.Forms.FlowLayoutPanel flpMasalar;
     }
 }
