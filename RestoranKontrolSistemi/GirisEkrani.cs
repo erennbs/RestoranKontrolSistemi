@@ -52,5 +52,9 @@ namespace RestoranKontrolSistemi
                 adminForm.Show();
             }
         }
+
+        private void GirisEkrani_FormClosed(object sender, FormClosedEventArgs e) {
+            Application.Exit();
+        }
     }
 }

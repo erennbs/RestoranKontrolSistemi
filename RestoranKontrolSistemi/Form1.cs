@@ -120,5 +120,9 @@ namespace RestoranKontrolSistemi
         private void tsmMasaCikar_Click(object sender, EventArgs e) {
             MasalarUC.Instance.MasaSil();
         }
+
+        private void frmMain_FormClosed(object sender, FormClosedEventArgs e) {
+            Application.Exit();
+        }
     }
 }

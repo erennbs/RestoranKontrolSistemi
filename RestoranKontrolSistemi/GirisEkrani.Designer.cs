@@ -36,13 +36,15 @@
             // 
             // btnGöster
             // 
+            this.btnGöster.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(111)))), ((int)(((byte)(82)))));
             this.btnGöster.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGöster.ForeColor = System.Drawing.Color.White;
             this.btnGöster.Location = new System.Drawing.Point(259, 189);
             this.btnGöster.Name = "btnGöster";
             this.btnGöster.Size = new System.Drawing.Size(188, 40);
             this.btnGöster.TabIndex = 0;
             this.btnGöster.Text = "Göster";
-            this.btnGöster.UseVisualStyleBackColor = true;
+            this.btnGöster.UseVisualStyleBackColor = false;
             // 
             // linkLabelAdmin
             // 
@@ -76,6 +78,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(657, 378);
             this.Controls.Add(this.lblMasaNum);
             this.Controls.Add(this.txtboxMasaNum);
@@ -83,6 +86,7 @@
             this.Controls.Add(this.btnGöster);
             this.Name = "GirisEkrani";
             this.Text = "Giriş Ekranı";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GirisEkrani_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

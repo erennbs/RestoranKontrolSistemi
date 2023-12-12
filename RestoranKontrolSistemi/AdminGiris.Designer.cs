@@ -38,24 +38,32 @@
             // 
             // btnAdminGiris
             // 
+            this.btnAdminGiris.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(111)))), ((int)(((byte)(82)))));
+            this.btnAdminGiris.FlatAppearance.BorderSize = 0;
+            this.btnAdminGiris.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminGiris.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdminGiris.ForeColor = System.Drawing.Color.White;
             this.btnAdminGiris.Location = new System.Drawing.Point(195, 191);
             this.btnAdminGiris.Name = "btnAdminGiris";
             this.btnAdminGiris.Size = new System.Drawing.Size(107, 42);
             this.btnAdminGiris.TabIndex = 0;
             this.btnAdminGiris.Text = "Giriş Yap";
-            this.btnAdminGiris.UseVisualStyleBackColor = true;
+            this.btnAdminGiris.UseVisualStyleBackColor = false;
             this.btnAdminGiris.Click += new System.EventHandler(this.btnAdminGiris_Click);
             // 
             // btnSifreUnut
             // 
+            this.btnSifreUnut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(111)))), ((int)(((byte)(82)))));
+            this.btnSifreUnut.FlatAppearance.BorderSize = 0;
+            this.btnSifreUnut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSifreUnut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSifreUnut.ForeColor = System.Drawing.Color.White;
             this.btnSifreUnut.Location = new System.Drawing.Point(317, 191);
             this.btnSifreUnut.Name = "btnSifreUnut";
             this.btnSifreUnut.Size = new System.Drawing.Size(107, 42);
             this.btnSifreUnut.TabIndex = 1;
             this.btnSifreUnut.Text = "Şifremi Unuttum";
-            this.btnSifreUnut.UseVisualStyleBackColor = true;
+            this.btnSifreUnut.UseVisualStyleBackColor = false;
             // 
             // labelKullanici
             // 
@@ -93,17 +101,22 @@
             // 
             // AdminGiris
             // 
+            this.AcceptButton = this.btnAdminGiris;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 388);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(594, 381);
             this.Controls.Add(this.txtBoxSifre);
             this.Controls.Add(this.txtBoxKullaniciAdi);
             this.Controls.Add(this.labelSifre);
             this.Controls.Add(this.labelKullanici);
             this.Controls.Add(this.btnSifreUnut);
             this.Controls.Add(this.btnAdminGiris);
+            this.MaximumSize = new System.Drawing.Size(610, 420);
+            this.MinimumSize = new System.Drawing.Size(610, 420);
             this.Name = "AdminGiris";
             this.Text = "Admin Giriş";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdminGiris_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
