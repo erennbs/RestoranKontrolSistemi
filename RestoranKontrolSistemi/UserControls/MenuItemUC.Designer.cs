@@ -1,7 +1,5 @@
-﻿namespace RestoranKontrolSistemi.UserControls
-{
-    partial class MenuItemUC
-    {
+﻿namespace RestoranKontrolSistemi.UserControls {
+    partial class MenuItemUC {
         /// <summary> 
         /// Required designer variable.
         /// </summary>
@@ -11,10 +9,8 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
+        protected override void Dispose(bool disposing) {
+            if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -26,18 +22,16 @@
         /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
-        {
+        private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuItemUC));
             this.labelYemekAdi = new System.Windows.Forms.Label();
             this.labelAciklama = new System.Windows.Forms.Label();
             this.labelFiyat = new System.Windows.Forms.Label();
-            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiSil = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
+            this.pictureYemek = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureYemek)).BeginInit();
             this.SuspendLayout();
             // 
             // labelYemekAdi
@@ -74,15 +68,6 @@
             this.labelFiyat.TabIndex = 3;
             this.labelFiyat.Text = "Fiyat";
             // 
-            // ımageList1
-            // 
-            this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
-            this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.ımageList1.Images.SetKeyName(0, "soup.png");
-            this.ımageList1.Images.SetKeyName(1, "indir.jpeg");
-            this.ımageList1.Images.SetKeyName(2, "pilav-1.jpg");
-            this.ımageList1.Images.SetKeyName(3, "ayrnaa2dfc7601.jpg");
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -98,36 +83,47 @@
             this.tsmiSil.Text = "Sil";
             this.tsmiSil.Click += new System.EventHandler(this.tsmiSil_Click);
             // 
-            // button1
+            // pictureYemek
             // 
-            
+            this.pictureYemek.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureYemek.Image = global::RestoranKontrolSistemi.Properties.Resources.no_image_1;
+            this.pictureYemek.Location = new System.Drawing.Point(15, 15);
+            this.pictureYemek.MaximumSize = new System.Drawing.Size(120, 120);
+            this.pictureYemek.MinimumSize = new System.Drawing.Size(120, 120);
+            this.pictureYemek.Name = "pictureYemek";
+            this.pictureYemek.Size = new System.Drawing.Size(120, 120);
+            this.pictureYemek.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureYemek.TabIndex = 0;
+            this.pictureYemek.TabStop = false;
             // 
             // MenuItemUC
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ContextMenuStrip = this.contextMenuStrip1;
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.labelFiyat);
             this.Controls.Add(this.labelAciklama);
             this.Controls.Add(this.labelYemekAdi);
+            this.Controls.Add(this.pictureYemek);
             this.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.MaximumSize = new System.Drawing.Size(500, 150);
             this.MinimumSize = new System.Drawing.Size(500, 150);
             this.Name = "MenuItemUC";
             this.Size = new System.Drawing.Size(500, 150);
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureYemek)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.PictureBox pictureYemek;
         private System.Windows.Forms.Label labelYemekAdi;
         private System.Windows.Forms.Label labelAciklama;
         private System.Windows.Forms.Label labelFiyat;
-        private System.Windows.Forms.ImageList ımageList1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tsmiSil;
-        private System.Windows.Forms.Button button1;
     }
 }

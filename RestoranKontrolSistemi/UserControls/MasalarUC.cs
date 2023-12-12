@@ -188,9 +188,12 @@ namespace RestoranKontrolSistemi.UserControls
             if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
 
             if (int.TryParse(dataGridSiparis.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString(), out value)) {
-                masaSelected.SiparislerList[e.RowIndex].FiyatGuncelle();
-            } else {
-                
+                if (value == 0) {
+                    Siparisler.Instance.SiparisIptalEt(masaSelected.SiparislerList[e.RowIndex]);
+                    masaSelected.SiparislerList.Remove(masaSelected.SiparislerList[e.RowIndex]);
+                } else {
+                    masaSelected.SiparislerList[e.RowIndex].FiyatGuncelle();
+                }
             }
             ToplamFiyatYaz();
 
