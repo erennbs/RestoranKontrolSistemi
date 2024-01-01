@@ -26,7 +26,6 @@
             this.components = new System.ComponentModel.Container();
             this.menuSplitContainer = new System.Windows.Forms.SplitContainer();
             this.cmsMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tsmiUrunEkle = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.btnResimSec = new System.Windows.Forms.Button();
             this.labelResim = new System.Windows.Forms.Label();
@@ -43,6 +42,8 @@
             this.labelAciklama = new System.Windows.Forms.Label();
             this.labelAd = new System.Windows.Forms.Label();
             this.ofdResim = new System.Windows.Forms.OpenFileDialog();
+            this.tsmiUrunEkle = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDosyayaYaz = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.menuSplitContainer)).BeginInit();
             this.menuSplitContainer.Panel1.SuspendLayout();
             this.menuSplitContainer.Panel2.SuspendLayout();
@@ -87,17 +88,10 @@
             // cmsMenu
             // 
             this.cmsMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiUrunEkle});
+            this.tsmiUrunEkle,
+            this.tsmiDosyayaYaz});
             this.cmsMenu.Name = "cmsMenu";
-            this.cmsMenu.Size = new System.Drawing.Size(125, 26);
-            // 
-            // tsmiUrunEkle
-            // 
-            this.tsmiUrunEkle.Image = global::RestoranKontrolSistemi.Properties.Resources.add_svg;
-            this.tsmiUrunEkle.Name = "tsmiUrunEkle";
-            this.tsmiUrunEkle.Size = new System.Drawing.Size(124, 22);
-            this.tsmiUrunEkle.Text = "Urun Ekle";
-            this.tsmiUrunEkle.Click += new System.EventHandler(this.tsmiUrunEkle_Click);
+            this.cmsMenu.Size = new System.Drawing.Size(186, 70);
             // 
             // menuPanel
             // 
@@ -124,7 +118,7 @@
             this.btnResimSec.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnResimSec.Location = new System.Drawing.Point(113, 253);
             this.btnResimSec.Name = "btnResimSec";
-            this.btnResimSec.Size = new System.Drawing.Size(143, 23);
+            this.btnResimSec.Size = new System.Drawing.Size(145, 23);
             this.btnResimSec.TabIndex = 10;
             this.btnResimSec.Text = "Seç";
             this.btnResimSec.UseVisualStyleBackColor = false;
@@ -156,7 +150,7 @@
             "İçecek"});
             this.cbKategori.Location = new System.Drawing.Point(113, 216);
             this.cbKategori.Name = "cbKategori";
-            this.cbKategori.Size = new System.Drawing.Size(143, 23);
+            this.cbKategori.Size = new System.Drawing.Size(145, 23);
             this.cbKategori.TabIndex = 9;
             this.cbKategori.Text = "Başlangıç";
             // 
@@ -192,7 +186,7 @@
             this.btnEkle.ForeColor = System.Drawing.Color.White;
             this.btnEkle.Location = new System.Drawing.Point(32, 553);
             this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(224, 26);
+            this.btnEkle.Size = new System.Drawing.Size(226, 26);
             this.btnEkle.TabIndex = 11;
             this.btnEkle.Text = "Ekle";
             this.btnEkle.UseVisualStyleBackColor = false;
@@ -216,7 +210,7 @@
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(221)))), ((int)(((byte)(196)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnClose.Location = new System.Drawing.Point(251, 0);
+            this.btnClose.Location = new System.Drawing.Point(253, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(41, 35);
             this.btnClose.TabIndex = 12;
@@ -232,7 +226,7 @@
             this.txtBoxFiyat.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtBoxFiyat.Location = new System.Drawing.Point(113, 178);
             this.txtBoxFiyat.Name = "txtBoxFiyat";
-            this.txtBoxFiyat.Size = new System.Drawing.Size(143, 23);
+            this.txtBoxFiyat.Size = new System.Drawing.Size(145, 23);
             this.txtBoxFiyat.TabIndex = 8;
             // 
             // txtBoxAciklama
@@ -244,7 +238,7 @@
             this.txtBoxAciklama.Location = new System.Drawing.Point(113, 118);
             this.txtBoxAciklama.Multiline = true;
             this.txtBoxAciklama.Name = "txtBoxAciklama";
-            this.txtBoxAciklama.Size = new System.Drawing.Size(143, 51);
+            this.txtBoxAciklama.Size = new System.Drawing.Size(145, 51);
             this.txtBoxAciklama.TabIndex = 7;
             // 
             // txtBoxAd
@@ -255,7 +249,7 @@
             this.txtBoxAd.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtBoxAd.Location = new System.Drawing.Point(113, 85);
             this.txtBoxAd.Name = "txtBoxAd";
-            this.txtBoxAd.Size = new System.Drawing.Size(143, 23);
+            this.txtBoxAd.Size = new System.Drawing.Size(145, 23);
             this.txtBoxAd.TabIndex = 6;
             // 
             // labelFiyat
@@ -296,6 +290,22 @@
             // 
             this.ofdResim.Filter = "Image Files|*.jpg;*.jpeg;*.png;";
             // 
+            // tsmiUrunEkle
+            // 
+            this.tsmiUrunEkle.Image = global::RestoranKontrolSistemi.Properties.Resources.add_svg;
+            this.tsmiUrunEkle.Name = "tsmiUrunEkle";
+            this.tsmiUrunEkle.Size = new System.Drawing.Size(185, 22);
+            this.tsmiUrunEkle.Text = "Urun Ekle";
+            this.tsmiUrunEkle.Click += new System.EventHandler(this.tsmiUrunEkle_Click);
+            // 
+            // tsmiDosyayaYaz
+            // 
+            this.tsmiDosyayaYaz.Image = global::RestoranKontrolSistemi.Properties.Resources.write_svg;
+            this.tsmiDosyayaYaz.Name = "tsmiDosyayaYaz";
+            this.tsmiDosyayaYaz.Size = new System.Drawing.Size(185, 22);
+            this.tsmiDosyayaYaz.Text = "Menüyü Dosyaya Yaz";
+            this.tsmiDosyayaYaz.Click += new System.EventHandler(this.tsmiDosyayaYaz_Click);
+            // 
             // MenuUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -334,5 +344,6 @@
         private System.Windows.Forms.OpenFileDialog ofdResim;
         private System.Windows.Forms.Button btnResimSec;
         private System.Windows.Forms.Label labelResim;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDosyayaYaz;
     }
 }

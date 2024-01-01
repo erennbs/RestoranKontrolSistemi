@@ -53,11 +53,6 @@ namespace RestoranKontrolSistemi.UserControls {
                 return;
             }
 
-            if (txtBoxAciklama.Text.Length == 0) {
-                labelWarning.Text = "* Geçersiz Açıklama!";
-                return;
-            }
-
             if (!float.TryParse(txtBoxFiyat.Text.Replace(".", ","), out fiyat)) {
                 labelWarning.Text = "* Geçersiz Fiyat!";
                 return;
@@ -96,6 +91,18 @@ namespace RestoranKontrolSistemi.UserControls {
                 string[] path = ofdResim.FileName.Split(Path.DirectorySeparatorChar);
                 btnResimSec.Text = path[path.Length - 1];
             }
+        }
+
+        private void tsmiDosyayaYaz_Click(object sender, EventArgs e) {
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            
+            StreamWriter file = new StreamWriter(desktopPath + @"\Menu.txt");
+
+            foreach (Urun urun in Urunler.Instance.UrunlerList) {
+                file.WriteLine(urun.UrunAdi + " - " + urun.Fiyat + "TL");
+            }
+
+            file.Close();
         }
     }
 }
