@@ -51,6 +51,11 @@ namespace RestoranKontrolSistemi.UserControls
                 newButton.Font = new Font("Microsoft New Tai Lue", 10);
                 newButton.Click += button_Click;
 
+                if (Masalar.Instance.MasalarList[i].Dolu) {
+                    newButton.BackColor = softRed;
+                    newButton.ForeColor = Color.White;
+                }
+
                 flpMasalar.Controls.Add(newButton);
             }
         }

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,15 +25,30 @@ namespace RestoranKontrolSistemi.Class {
                 throw new Exception("Cannot have more than one instance of Masalar!");
             }
 
-            for (int i = 0; i < 10; i++) {
-                Masa masa = new Masa(i + 1);
-                masalarList.Add(masa);
-            }
+            //for (int i = 0; i < 10; i++) {
+            //    Masa masa = new Masa(i + 1);
+            //    masalarList.Add(masa);
+            //}
 
+
+            // Masaları database'den ekle
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["adminConnection"].ConnectionString)) {
+                connection.Open();
+                
+                SqlCommand cmd = new SqlCommand("select * from masalar", connection);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read()) {
+                    Masa newMasa = new Masa((int) reader[0], (bool) reader[1]);
+                    masalarList.Add(newMasa);
+                }
+
+                reader.Close();
+            }
         }
 
         public void MasaEkle() {
-            MasalarList.Add(new Masa(MasalarList.Count + 1));
+            MasalarList.Add(new Masa(MasalarList.Count + 1, false));
         }
 
         public void MasaSil() {
