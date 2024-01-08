@@ -27,6 +27,11 @@ namespace RestoranKontrolSistemi.UserControls {
 
             menuSplitContainer.Panel2Collapsed = true;
 
+            UrunleriYaz();
+            
+        }
+
+        public void UrunleriYaz() {
             foreach (Urun urun in Urunler.Instance.UrunlerList) {
                 MenuItemUC item = new MenuItemUC();
                 item.UrunuYaz(urun);

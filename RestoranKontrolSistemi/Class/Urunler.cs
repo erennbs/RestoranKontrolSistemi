@@ -1,6 +1,8 @@
 ﻿using RestoranKontrolSistemi.UserControls;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,10 +21,23 @@ namespace RestoranKontrolSistemi.Class {
                 throw new Exception("Cannot have more than one instance of Urunler!");
             }
 
-            UrunlerList.Add(new Urun("Mercimek Çorbası", "Mis gibi, sıcacık...", 35, "Başlangıç"));
-            UrunlerList.Add(new Urun("Kuru Fasülye", "Etli", 45, "Ana Yemek"));
-            UrunlerList.Add(new Urun("Pilav", "Kuru fasülye ile ayrılmayan ikili", 40, "Ana Yemek"));
-            UrunlerList.Add(new Urun("Ayran", "Köpüklü", 10, "İçecek"));
+            KayitliUrunleriYaz();
+        }
+
+        public void KayitliUrunleriYaz() {
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["adminConnection"].ConnectionString)) {
+                connection.Open();
+
+                SqlCommand cmd = new SqlCommand("SELECT * FROM urunler", connection);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read()) {
+                    Urun newUrun = new Urun((string)reader[1], (string)reader[2], (float)reader[4], (string)reader[3], (int)reader[0]);
+                    UrunlerList.Add(newUrun);
+                }
+
+                reader.Close();
+            }
         }
 
         public void UrunEkle(Urun urun) {
@@ -33,6 +48,16 @@ namespace RestoranKontrolSistemi.Class {
         public void UrunSil(Urun urun) {
             UrunlerList.Remove(urun);
             MasalarUC.Instance.UrunlerListboxYenile();
+        }
+
+        public Urun GetUrunWithID(int ID) {
+            return UrunlerList.Where(urun => urun.UrunID == ID).FirstOrDefault();
+        }
+
+        public int GenerateUrunID() {
+            if (UrunlerList.Count == 0) return 1;
+
+            return UrunlerList[UrunlerList.Count - 1].UrunID + 1;
         }
     }
 }

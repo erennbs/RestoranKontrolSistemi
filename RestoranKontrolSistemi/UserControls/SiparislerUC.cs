@@ -28,6 +28,8 @@ namespace RestoranKontrolSistemi.UserControls
 
             dataGridSiparisQueue.AutoGenerateColumns = false;
             dataGridSiparisQueue.DataSource = Siparisler.Instance.SiparislerQueue;
+
+
         }
 
         private void btnBitir_Click(object sender, EventArgs e) {
