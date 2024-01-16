@@ -26,6 +26,8 @@
             this.components = new System.ComponentModel.Container();
             this.menuSplitContainer = new System.Windows.Forms.SplitContainer();
             this.cmsMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiUrunEkle = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDosyayaYaz = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.btnResimSec = new System.Windows.Forms.Button();
             this.labelResim = new System.Windows.Forms.Label();
@@ -42,8 +44,6 @@
             this.labelAciklama = new System.Windows.Forms.Label();
             this.labelAd = new System.Windows.Forms.Label();
             this.ofdResim = new System.Windows.Forms.OpenFileDialog();
-            this.tsmiUrunEkle = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiDosyayaYaz = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.menuSplitContainer)).BeginInit();
             this.menuSplitContainer.Panel1.SuspendLayout();
             this.menuSplitContainer.Panel2.SuspendLayout();
@@ -91,7 +91,23 @@
             this.tsmiUrunEkle,
             this.tsmiDosyayaYaz});
             this.cmsMenu.Name = "cmsMenu";
-            this.cmsMenu.Size = new System.Drawing.Size(186, 70);
+            this.cmsMenu.Size = new System.Drawing.Size(186, 48);
+            // 
+            // tsmiUrunEkle
+            // 
+            this.tsmiUrunEkle.Image = global::RestoranKontrolSistemi.Properties.Resources.add_svg;
+            this.tsmiUrunEkle.Name = "tsmiUrunEkle";
+            this.tsmiUrunEkle.Size = new System.Drawing.Size(185, 22);
+            this.tsmiUrunEkle.Text = "Urun Ekle";
+            this.tsmiUrunEkle.Click += new System.EventHandler(this.tsmiUrunEkle_Click);
+            // 
+            // tsmiDosyayaYaz
+            // 
+            this.tsmiDosyayaYaz.Image = global::RestoranKontrolSistemi.Properties.Resources.write_svg;
+            this.tsmiDosyayaYaz.Name = "tsmiDosyayaYaz";
+            this.tsmiDosyayaYaz.Size = new System.Drawing.Size(185, 22);
+            this.tsmiDosyayaYaz.Text = "Menüyü Dosyaya Yaz";
+            this.tsmiDosyayaYaz.Click += new System.EventHandler(this.tsmiDosyayaYaz_Click);
             // 
             // menuPanel
             // 
@@ -116,9 +132,9 @@
             this.btnResimSec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnResimSec.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnResimSec.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnResimSec.Location = new System.Drawing.Point(113, 253);
+            this.btnResimSec.Location = new System.Drawing.Point(111, 253);
             this.btnResimSec.Name = "btnResimSec";
-            this.btnResimSec.Size = new System.Drawing.Size(145, 23);
+            this.btnResimSec.Size = new System.Drawing.Size(147, 23);
             this.btnResimSec.TabIndex = 10;
             this.btnResimSec.Text = "Seç";
             this.btnResimSec.UseVisualStyleBackColor = false;
@@ -129,7 +145,7 @@
             this.labelResim.AutoSize = true;
             this.labelResim.Font = new System.Drawing.Font("Microsoft New Tai Lue", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelResim.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.labelResim.Location = new System.Drawing.Point(29, 256);
+            this.labelResim.Location = new System.Drawing.Point(27, 256);
             this.labelResim.Name = "labelResim";
             this.labelResim.Size = new System.Drawing.Size(50, 16);
             this.labelResim.TabIndex = 5;
@@ -148,9 +164,9 @@
             "Ana Yemek",
             "Tatlı",
             "İçecek"});
-            this.cbKategori.Location = new System.Drawing.Point(113, 216);
+            this.cbKategori.Location = new System.Drawing.Point(111, 216);
             this.cbKategori.Name = "cbKategori";
-            this.cbKategori.Size = new System.Drawing.Size(145, 23);
+            this.cbKategori.Size = new System.Drawing.Size(147, 23);
             this.cbKategori.TabIndex = 9;
             this.cbKategori.Text = "Başlangıç";
             // 
@@ -159,7 +175,7 @@
             this.labelKategori.AutoSize = true;
             this.labelKategori.Font = new System.Drawing.Font("Microsoft New Tai Lue", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelKategori.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.labelKategori.Location = new System.Drawing.Point(29, 218);
+            this.labelKategori.Location = new System.Drawing.Point(27, 218);
             this.labelKategori.Name = "labelKategori";
             this.labelKategori.Size = new System.Drawing.Size(67, 16);
             this.labelKategori.TabIndex = 4;
@@ -170,7 +186,7 @@
             this.labelWarning.AutoSize = true;
             this.labelWarning.Font = new System.Drawing.Font("Microsoft New Tai Lue", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelWarning.ForeColor = System.Drawing.Color.Firebrick;
-            this.labelWarning.Location = new System.Drawing.Point(110, 301);
+            this.labelWarning.Location = new System.Drawing.Point(108, 301);
             this.labelWarning.Name = "labelWarning";
             this.labelWarning.Size = new System.Drawing.Size(0, 16);
             this.labelWarning.TabIndex = 9;
@@ -186,7 +202,7 @@
             this.btnEkle.ForeColor = System.Drawing.Color.White;
             this.btnEkle.Location = new System.Drawing.Point(32, 553);
             this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(226, 26);
+            this.btnEkle.Size = new System.Drawing.Size(228, 26);
             this.btnEkle.TabIndex = 11;
             this.btnEkle.Text = "Ekle";
             this.btnEkle.UseVisualStyleBackColor = false;
@@ -197,7 +213,7 @@
             this.labelYeniUrun.AutoSize = true;
             this.labelYeniUrun.Font = new System.Drawing.Font("Microsoft New Tai Lue", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelYeniUrun.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.labelYeniUrun.Location = new System.Drawing.Point(27, 12);
+            this.labelYeniUrun.Location = new System.Drawing.Point(25, 9);
             this.labelYeniUrun.Name = "labelYeniUrun";
             this.labelYeniUrun.Size = new System.Drawing.Size(112, 26);
             this.labelYeniUrun.TabIndex = 0;
@@ -210,7 +226,7 @@
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(221)))), ((int)(((byte)(196)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnClose.Location = new System.Drawing.Point(253, 0);
+            this.btnClose.Location = new System.Drawing.Point(243, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(41, 35);
             this.btnClose.TabIndex = 12;
@@ -224,9 +240,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBoxFiyat.BackColor = System.Drawing.Color.White;
             this.txtBoxFiyat.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtBoxFiyat.Location = new System.Drawing.Point(113, 178);
+            this.txtBoxFiyat.Location = new System.Drawing.Point(111, 178);
             this.txtBoxFiyat.Name = "txtBoxFiyat";
-            this.txtBoxFiyat.Size = new System.Drawing.Size(145, 23);
+            this.txtBoxFiyat.Size = new System.Drawing.Size(147, 23);
             this.txtBoxFiyat.TabIndex = 8;
             // 
             // txtBoxAciklama
@@ -235,10 +251,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBoxAciklama.BackColor = System.Drawing.Color.White;
             this.txtBoxAciklama.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtBoxAciklama.Location = new System.Drawing.Point(113, 118);
+            this.txtBoxAciklama.Location = new System.Drawing.Point(111, 118);
             this.txtBoxAciklama.Multiline = true;
             this.txtBoxAciklama.Name = "txtBoxAciklama";
-            this.txtBoxAciklama.Size = new System.Drawing.Size(145, 51);
+            this.txtBoxAciklama.Size = new System.Drawing.Size(147, 51);
             this.txtBoxAciklama.TabIndex = 7;
             // 
             // txtBoxAd
@@ -247,9 +263,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBoxAd.BackColor = System.Drawing.Color.White;
             this.txtBoxAd.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtBoxAd.Location = new System.Drawing.Point(113, 85);
+            this.txtBoxAd.Location = new System.Drawing.Point(111, 85);
             this.txtBoxAd.Name = "txtBoxAd";
-            this.txtBoxAd.Size = new System.Drawing.Size(145, 23);
+            this.txtBoxAd.Size = new System.Drawing.Size(147, 23);
             this.txtBoxAd.TabIndex = 6;
             // 
             // labelFiyat
@@ -257,7 +273,7 @@
             this.labelFiyat.AutoSize = true;
             this.labelFiyat.Font = new System.Drawing.Font("Microsoft New Tai Lue", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelFiyat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.labelFiyat.Location = new System.Drawing.Point(29, 180);
+            this.labelFiyat.Location = new System.Drawing.Point(27, 180);
             this.labelFiyat.Name = "labelFiyat";
             this.labelFiyat.Size = new System.Drawing.Size(40, 16);
             this.labelFiyat.TabIndex = 3;
@@ -268,7 +284,7 @@
             this.labelAciklama.AutoSize = true;
             this.labelAciklama.Font = new System.Drawing.Font("Microsoft New Tai Lue", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelAciklama.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.labelAciklama.Location = new System.Drawing.Point(29, 120);
+            this.labelAciklama.Location = new System.Drawing.Point(27, 120);
             this.labelAciklama.Name = "labelAciklama";
             this.labelAciklama.Size = new System.Drawing.Size(68, 16);
             this.labelAciklama.TabIndex = 2;
@@ -280,7 +296,7 @@
             this.labelAd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(247)))), ((int)(((byte)(228)))));
             this.labelAd.Font = new System.Drawing.Font("Microsoft New Tai Lue", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelAd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.labelAd.Location = new System.Drawing.Point(29, 87);
+            this.labelAd.Location = new System.Drawing.Point(27, 87);
             this.labelAd.Name = "labelAd";
             this.labelAd.Size = new System.Drawing.Size(25, 16);
             this.labelAd.TabIndex = 1;
@@ -289,22 +305,6 @@
             // ofdResim
             // 
             this.ofdResim.Filter = "Image Files|*.jpg;*.jpeg;*.png;";
-            // 
-            // tsmiUrunEkle
-            // 
-            this.tsmiUrunEkle.Image = global::RestoranKontrolSistemi.Properties.Resources.add_svg;
-            this.tsmiUrunEkle.Name = "tsmiUrunEkle";
-            this.tsmiUrunEkle.Size = new System.Drawing.Size(185, 22);
-            this.tsmiUrunEkle.Text = "Urun Ekle";
-            this.tsmiUrunEkle.Click += new System.EventHandler(this.tsmiUrunEkle_Click);
-            // 
-            // tsmiDosyayaYaz
-            // 
-            this.tsmiDosyayaYaz.Image = global::RestoranKontrolSistemi.Properties.Resources.write_svg;
-            this.tsmiDosyayaYaz.Name = "tsmiDosyayaYaz";
-            this.tsmiDosyayaYaz.Size = new System.Drawing.Size(185, 22);
-            this.tsmiDosyayaYaz.Text = "Menüyü Dosyaya Yaz";
-            this.tsmiDosyayaYaz.Click += new System.EventHandler(this.tsmiDosyayaYaz_Click);
             // 
             // MenuUC
             // 

@@ -38,17 +38,15 @@ namespace RestoranKontrolSistemi.Class {
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 while (reader.Read()) {
-                    if ((bool)reader[4] && (int)reader[0] > maxID) {
-                        maxID = (int)reader[0];
-                        continue;
-                    }
-
                     Urun urun = Urunler.Instance.GetUrunWithID((int)reader[1]);
                     if (urun != null) {
-                        Siparis newSiparis = new Siparis(urun, (int) reader[2], (int) reader[3], siparisID: (int) reader[0]);
-                        SırayaEkle(newSiparis);
-                        if ((int)reader[0] > maxID) maxID = (int)reader[0];
+                        Siparis newSiparis = new Siparis(urun, (int) reader[2], (int) reader[3], siparisID: (int) reader[0], (bool)reader[4]);
+
+                        Masalar.Instance.MasalarList[(int)reader[3] - 1].SiparisEkle(newSiparis);
                     }
+
+                    if ((int)reader[0] > maxID) maxID = (int)reader[0];
+
                 }
 
                 reader.Close();
@@ -65,16 +63,39 @@ namespace RestoranKontrolSistemi.Class {
             
             Siparis siparis = SiparislerQueue[0];
             siparis.SiparisHazir();
+
+            SetReadySQL(siparis);
+
             SiparislerQueue.RemoveAt(0);
             return siparis;
         }
 
         public void SiparisIptalEt(Siparis siparis) {
+            DeleteSiparisSQL(siparis);
+
             SiparislerQueue.Remove(siparis);
         }
 
         public int GenerateSiparisID() {
             return ++maxID;
+        }
+
+        private void DeleteSiparisSQL(Siparis siparis) {
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["adminConnection"].ConnectionString)) {
+                connection.Open();
+
+                SqlCommand cmd = new SqlCommand($"DELETE FROM siparisler WHERE siparis_id = {siparis.siparisID}", connection);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void SetReadySQL(Siparis siparis) {
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["adminConnection"].ConnectionString)) {
+                connection.Open();
+
+                SqlCommand cmd = new SqlCommand($"UPDATE siparisler SET hazir = 1 WHERE siparis_id = {siparis.siparisID}", connection);
+                cmd.ExecuteNonQuery();
+            }
         }
 
     }

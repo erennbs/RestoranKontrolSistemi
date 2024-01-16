@@ -14,15 +14,18 @@ namespace RestoranKontrolSistemi.Class {
         
         public string UrunKategori { get; private set; }
 
-        public float Fiyat { get; private set; }
+        public double Fiyat { get; private set; }
+
+        public string ImgPath { get; set; }
 
 
-        public Urun(string urunAdi, string urunAciklama, float fiyat, string kategori, int urunID = -1) {
+        public Urun(string urunAdi, string urunAciklama, double fiyat, string kategori, int urunID = -1, string imgPath = null) {
             this.UrunAdi = urunAdi;
             this.UrunAciklama = urunAciklama;
             this.Fiyat = fiyat;
             this.UrunKategori = kategori;
             this.UrunID = urunID == -1 ? Urunler.Instance.GenerateUrunID() : urunID;
+            this.ImgPath = imgPath;
         }
     }
 }

@@ -16,6 +16,8 @@ namespace RestoranKontrolSistemi.UserControls {
         public static MenuUC Instance { get; private set; }
         string[] kategoriler = { "Başlangıç", "Ana Yemek", "Tatlı", "İçecek" };
 
+        string productImageDir = Directory.GetCurrentDirectory() + @"\..\..\Images\ProductImage\";
+
         public MenuUC() {
             InitializeComponent();
             
@@ -50,7 +52,7 @@ namespace RestoranKontrolSistemi.UserControls {
         private void btnEkle_Click(object sender, EventArgs e) {
             string ad = txtBoxAd.Text;
             string aciklama = txtBoxAciklama.Text;
-            float fiyat;
+            double fiyat;
             string kategori = cbKategori.Text;
             
             if (txtBoxAd.Text.Length == 0) {
@@ -58,7 +60,7 @@ namespace RestoranKontrolSistemi.UserControls {
                 return;
             }
 
-            if (!float.TryParse(txtBoxFiyat.Text.Replace(".", ","), out fiyat)) {
+            if (!double.TryParse(txtBoxFiyat.Text.Replace(".", ","), out fiyat)) {
                 labelWarning.Text = "* Geçersiz Fiyat!";
                 return;
             }
@@ -68,11 +70,18 @@ namespace RestoranKontrolSistemi.UserControls {
                 return;
             }
 
-            Urun yeniUrun = new Urun(ad, aciklama, fiyat, kategori);
+            Urun yeniUrun = new Urun(ad, aciklama, fiyat, kategori, imgPath: ofdResim.FileName);
+
+            if (ofdResim.FileName != "") {
+                string img_path = ofdResim.FileName;
+                File.Copy(img_path, Path.Combine(productImageDir, yeniUrun.UrunID.ToString() + ".png"));
+                yeniUrun.ImgPath = productImageDir + yeniUrun.UrunID.ToString() + ".png";
+            }
+
             Urunler.Instance.UrunEkle(yeniUrun);
 
             MenuItemUC newMenuItem = new MenuItemUC();
-            newMenuItem.UrunuYaz(yeniUrun, ofdResim.FileName);
+            newMenuItem.UrunuYaz(yeniUrun);
             newMenuItem.Width = 582;
 
             menuPanel.Controls.Add(newMenuItem);
@@ -93,8 +102,7 @@ namespace RestoranKontrolSistemi.UserControls {
         private void btnResimSec_Click(object sender, EventArgs e) {
             DialogResult result = ofdResim.ShowDialog();
             if (result == DialogResult.OK) {
-                string[] path = ofdResim.FileName.Split(Path.DirectorySeparatorChar);
-                btnResimSec.Text = path[path.Length - 1];
+                btnResimSec.Text = GetFileNameFromPath(ofdResim.FileName);
             }
         }
 
@@ -108,6 +116,11 @@ namespace RestoranKontrolSistemi.UserControls {
             }
 
             file.Close();
+        }
+
+        private string GetFileNameFromPath(string img_path) {
+            string[] path = img_path.Split(Path.DirectorySeparatorChar);
+            return path[path.Length - 1];
         }
     }
 }

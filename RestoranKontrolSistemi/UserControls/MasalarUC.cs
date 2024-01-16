@@ -178,7 +178,7 @@ namespace RestoranKontrolSistemi.UserControls
 
         private void ToplamFiyatYaz() {
             // Secilen masanın siparislerinin toplam fiyatini hesapla.
-            float toplam = 0;
+            double toplam = 0;
 
             foreach (Siparis siparis in masaSelected.SiparislerList) {
                 toplam += siparis.NetFiyat;
