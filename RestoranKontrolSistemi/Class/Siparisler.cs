@@ -64,6 +64,7 @@ namespace RestoranKontrolSistemi.Class {
             Siparis siparis = SiparislerQueue[0];
             siparis.SiparisHazir();
 
+            // Database urunu hazir hale getir
             SetReadySQL(siparis);
 
             SiparislerQueue.RemoveAt(0);

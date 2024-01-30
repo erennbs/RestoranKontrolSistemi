@@ -65,7 +65,9 @@ namespace RestoranKontrolSistemi.Class {
                 cmd.ExecuteNonQuery();
             }
 
-            File.Delete(Path.Combine(Directory.GetCurrentDirectory(), @"\..\..\Images\ProductImage\", urun.ImgPath));
+            if (urun.ImgPath != null) { 
+                File.Delete(Path.Combine(Directory.GetCurrentDirectory(), @"\..\..\Images\ProductImage\", urun.ImgPath));
+            }
 
             UrunlerList.Remove(urun);
             MasalarUC.Instance.UrunlerListboxYenile();
@@ -82,8 +84,9 @@ namespace RestoranKontrolSistemi.Class {
         }
 
         public static T ConvertFromDBVal<T>(object obj) {
+            // Null ise null yoksa degerini dondur
             if (obj == null || obj == DBNull.Value) {
-                return default(T); // returns the default value for the type
+                return default(T);
             }
             else {
                 return (T)obj;

@@ -49,7 +49,9 @@ namespace RestoranKontrolSistemi.Class
 
         public void SiparisEkle(Siparis siparis) {
             SiparislerList.Add(siparis);
-            Siparisler.Instance.SırayaEkle(siparis);
+            if (!siparis.Hazir) {
+                Siparisler.Instance.SırayaEkle(siparis);
+            }
         }
     }
 }

@@ -37,7 +37,13 @@ namespace RestoranKontrolSistemi
             bottomPanel.Controls.Add(masalarUC);
 
             tssSaat.Text = DateTime.Now.ToString("t");
-            
+
+            float val;
+
+            val = (float)Masalar.Instance.MasalarList.Where(masa => masa.Dolu).Count() / Masalar.Instance.MasalarList.Count * 100;
+
+            SetProgressBar((int)val);
+
         }
 
         private void btnMasalar_Click(object sender, EventArgs e)

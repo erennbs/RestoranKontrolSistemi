@@ -25,12 +25,6 @@ namespace RestoranKontrolSistemi.Class {
                 throw new Exception("Cannot have more than one instance of Masalar!");
             }
 
-            //for (int i = 0; i < 10; i++) {
-            //    Masa masa = new Masa(i + 1);
-            //    masalarList.Add(masa);
-            //}
-
-
             // Masaları database'den ekle
             using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["adminConnection"].ConnectionString)) {
                 connection.Open();
@@ -48,6 +42,15 @@ namespace RestoranKontrolSistemi.Class {
         }
 
         public void MasaEkle() {
+            Masa masa = new Masa(MasalarList.Count + 1, false);
+            
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["adminConnection"].ConnectionString)) {
+                connection.Open();
+
+                SqlCommand cmd = new SqlCommand($"INSERT INTO masalar VALUES ({masa.MasaNumarasi}, {(masa.Dolu ? 1 : 0)})", connection);
+                cmd.ExecuteNonQuery();
+            }
+
             MasalarList.Add(new Masa(MasalarList.Count + 1, false));
         }
 
@@ -55,6 +58,14 @@ namespace RestoranKontrolSistemi.Class {
             foreach (Siparis siparis in GetLastElement().SiparislerList) {
                 Siparisler.Instance.SiparisIptalEt(siparis);
             }
+
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["adminConnection"].ConnectionString)) {
+                connection.Open();
+
+                SqlCommand cmd = new SqlCommand($"DELETE FROM masalar WHERE masa_no = {MasalarList.Count}", connection);
+                cmd.ExecuteNonQuery();
+            }
+            
             masalarList.RemoveAt(masalarList.Count - 1);
         }
 

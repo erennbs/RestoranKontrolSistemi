@@ -162,6 +162,7 @@ namespace RestoranKontrolSistemi.UserControls
             }
 
             ProgressBarGuncelle();
+            ToplamFiyatYaz();
         }
 
         private void ProgressBarGuncelle() {
@@ -170,7 +171,7 @@ namespace RestoranKontrolSistemi.UserControls
                 val = 0;
             } else {
                 val = (float)Masalar.Instance.MasalarList.Where(masa => masa.Dolu).Count() / Masalar.Instance.MasalarList.Count * 100;
-                Console.WriteLine((Masalar.Instance.MasalarList.Where(masa => masa.Dolu).Count() / Masalar.Instance.MasalarList.Count));
+                //Console.WriteLine((Masalar.Instance.MasalarList.Where(masa => masa.Dolu).Count() / Masalar.Instance.MasalarList.Count));
             }
 
             ((frmMain)Application.OpenForms[Application.OpenForms.Count - 1]).SetProgressBar((int)val);

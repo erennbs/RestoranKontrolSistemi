@@ -70,7 +70,7 @@ namespace RestoranKontrolSistemi.UserControls {
                 return;
             }
 
-            Urun yeniUrun = new Urun(ad, aciklama, fiyat, kategori, imgPath: ofdResim.FileName);
+            Urun yeniUrun = new Urun(ad, aciklama, fiyat, kategori);
 
             if (ofdResim.FileName != "") {
                 string img_path = ofdResim.FileName;
